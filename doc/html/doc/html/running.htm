@@ -1,0 +1,104 @@
+<hr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Running JmsStream</title>
+  </head>
+
+  <body>
+  <h2> Running JmsStream </h2>
+    <h3><a name="running"/>JmsStream.jar</h3>
+	<p>To run jmsStream.jar, Java JRE 1.5.0 or higher must be installed on the system unless you are using the EXE versions. All of the examples assume that the Java JRE bin directory is in the system path. JmsStream.jar is a executable JAR file, meaning that the <code>java -jar</code> command can be used to execute the program. However when using JMS servers other than TIBCO EMS, the JmsStream.jar and the JAR of the JMS server's client libraries must be in the classpath, and the  <code>com.tibco.util.JmsStream</code> class put as the Java startup class.</p>
+	<blockquote>
+	  <h4>Examples</h4>
+  	</blockquote>
+  	<code>
+    <ul>
+      <li>java -jar JmsStream.jar -?</li>
+      <li>java -jar JmsStream.jar -getbodylength &quot;c:\msgbody.txt&quot; </li>
+      <li> java -jar JmsStream.jar -topic -send  -providerurl tibjmsnaming://localhost:7222 SndTimestamp -filetype xml -file /export/home/tibco/testjmss.xml</li>
+      <li>java -jar JmsStream.jar -topic -send topic.sample -providerurl tibjmsnaming://localhost:7222 -file /export/home/tibco/testjmss.jmss </li>
+      <li>java -jar JmsStream.jar -queue -requestreply &quot;c:\testjmss.jmss&quot; -providerurl tibjmsnaming://localhost:7222 -user admin -password admin -sndtimestamp SndTimestamp -csvfile &quot;c:\csvfile.csv&quot; -asyncreply -echocsv</li>
+      <li> java -jar JmsStream.jar -ssl_jndi -connectionfactory SSLQueueConnectionFactory -providerurl tibjmsnaming://svr-esb.tibco.com:7243 -listen topic.sample -user admin -password admin -clientid JmsStream -raw -ssl_trace</li>
+      <li>java -jar JmsStream.jar -topic -send -deliverymode RELIABLE_DELIVERY -sndtimestamp SndTimestamp -ratestamp RateStamp -startrate 50 -maxrate 100 -numberofintervals 500 -intervalsize 5 -file &quot;c:\testjmss.jmss&quot;</li>
+      <li>java -jar JmsStream.jar -providerurl tibjmsnaming://localhost:7222 -user admin -password admin123 -queue -listen queue.sample -trans jms -transmsgnum 3</li>
+      <li>java -jar JmsStream.jar -queue -listen queue.sample -user admin -password admin -noecho -csvfile &quot;c:\csvfile.csv&quot;</li>
+      <li>java -jar JmsStream.jar -queue -listen queue.sample -user admin -password admin -file &quot;c:\testjmss.zip&quot; -zip save1.jmss </li>
+      <li>java -jar JmsStream.jar -queue -listen queue.sample -user admin -password admin -file &quot;c:\testjmss.zip&quot; -zipmsgperentry 50 </li>
+      <li>java -jar JmsStream.jar -topic -send topic.sample -user admin -password admin -file &quot;c:\testjmss.zip&quot; -zip -noecho</li>
+      <li> java -jar JmsStream.jar -providerurl tibjmsnaming://localhost:7222 -connectionfactory XAQueueConnectionFactory -user admin -password mypass -queue -listen queue.sample -trans xa -transmgrtype local -transmsgnum 3</li>
+      <li> java -cp ./jbossall-client.jar:./JmsStream.jar com.tibco.util.JmsStream -topic -connectionfactory UIL2ConnectionFactory -jndicontextfactory org.jnp.interfaces.NamingContextFactory -providerurl jnp://localhost:1099 -listen testTopic -echo -file /home/tibco/testjmss.jmss</li>
+      <li>java -cp ./jbossall-client.jar:./JmsStream.jar com.tibco.util.JmsStream -topic -connectionfactory UIL2ConnectionFactory -jndicontextfactory org.jnp.interfaces.NamingContextFactory -providerurl jnp://localhost:1099 -send myTopic -rate 1.5 -file /home/tibco/testjmss.jmss</li>
+    </ul>
+  	</code>
+<p>In <code>-listen</code> mode JmsStream will continue to listen and capture messages until it is terminated (normally with Ctrl C), or if the <code>-stopafter</code> parameter is set to a number greater than 0 in which JmsStream listener will stop after receiving that number of messages.</p>
+<p>Instead of putting all the configuration setting on the command-line, it is possible to load them instead from a Java properties file. For example:<br> 
+  <code>java -jar JmsStream.jar -configfile &quot;TopicTest2.conf&quot;<br>
+  </code> Where <code>TopicTest2.conf</code> is a saved JmsStream configuration file form the JmsStreamGUI application. This simplifies this startup if there are a large number of options. To create a JmsStream configuration file see the next section.</p>
+<p>To connect JmsStream to Apache ActiveMQ using a trusted SSL certificate you must create a client trust key store for the server key store and add it to the Java VM system properties of JmsStream. Go to <a href="http://activemq.apache.org/how-do-i-use-ssl.html">http://activemq.apache.org/how-do-i-use-ssl.html</a> for more info.</p>
+<p>Example:<br>
+  <code>java -Djavax.net.ssl.trustStore=<em>~</em>/conf/broker.ts -Djavax.net.ssl.trustStorePassword=password  -jar JmsStream.jar -ssl </code></p>
+<h3><a name="runningGUI" id="runningGUI1"/>JmsStreamGUI.jar</h3>
+ 	<p><code>JmsStreamGUI.jar</code> is a graphical front end to JmsStream. It allows you to graphically set the command parameter and view the JmsStream output inside a graphical window. However due to the way Java Swing renders the graphics, echoing message output will reduce the publication and subscription rates. To improve the speed set Show Statistical Information to 1000 or 2000 and select &quot;No Echo Output to Screen&quot;.</p>
+ 	<p>To configure JmsStream GUI click File -&gt; New Configuration... or click the New Configuration button on the toolbar. The JmsStream Configuration dialog box will appear (<em>Figure 1)</em>.</p>
+ 	<p><img src="file:///C|/Development/IntelliJ/JmsStream/doc/images/JmsStreamGUI_config.jpg" alt="JmsStream Configuration" width="734" height="432"><br>
+ 	<em>Figure 1</em></p>
+ 	<p>If you are confused about an input, the tool tip will display when you hover the moue over the field. (<em>Figure 2</em>) The tool tip will only show up if the mouse is over the actual component and will not display if the mouse is over the label.</p>
+ 	<p><img src="file:///C|/Development/IntelliJ/JmsStream/doc/images/ToolTipExample.jpg" alt="Tool text example." width="708" height="363"><br>
+ 	  <em>Figure 2</em></p>
+  <p>Once the configurations are set, click the Start button to execute JmsStream. To save the setting to a JmsStream configuration file click the Save button on the toolbar or select &quot;Save Configuration&quot; from the File menu. In the example configuration in <em>Figure 1</em>, clicking the Start button starts JmsStreamGUI publishing messages on <code>topic.sample</code>.  JmsStreamGUI will display the results in its main text window as shown in <em>Figure 3</em>.</p>
+  <p><img src="../images/JmsStreamGUI.jpg" alt="JmsStreamGUI" width="742" height="450" /><br>
+ 	    <em>Figure 3</em></p>
+  <p>JmsStreamGUI has the ability to edit the JmsStream message capture file (<code>.jmss)</code>. <em>Figure 4</em> shows how to start the message editor from the menu bar if you do not have a configuration already loaded. </p>
+<p><img src="../images/StartMsgEditor1.jpg" width="468" height="266" alt="Open Message Editor"><br>
+  <em> Figure 4</em>
+<p><em>Figure 5</em> shows how to start the message editor from the configuration editor.
+  <p><img src="../images/StartMsgEditor2.jpg" alt="Start Message Editor from Config Dialog" width="494" height="310" /><br>
+    <em> Figure 5</em>
+  <p><em>Figure 6</em> shows the message editing dialog box.  You can edit, add, or delete messes in the replay (<code>.jmss)</code> file.
+    When opening large replay files the message editor can tale some time to come up. Please be patience.
+  <p><img src="../images/MsgEditor1.jpg" alt="Message Editor Dialog" width="742" height="450" /> <br>
+    <em>Figure 6</em>
+  <p>JmsStreamGUI Message Editor can edit Text, Binary, and MapMessages in ANSI, CP1252, ISO8859_1, UTF-8, and UTF-16 encodings. However the editor will only read standard JMS MapMessages and not proprietary nested MapMessage. For Binary Messages the message editor will also convert between base64 binary and text as show in <em>Figure 7</em>.</p>
+    <p><img src="../images/MsgEditorBinary.jpg" alt="Message Editor Binary Type" width="742" height="450" /><em><br>
+  Figure 7</em></p>
+    <p>Sometime a JNDI server is not available, or in the case of ActiveMQ, the JNDI in the JMS server does not expose XA connection factories, JmsStream has the ability to create and use a local file based JNDI. Select <code>Tools -&gt; Create a File Based JNDI...</code> to open the form to create a file base JNDI as shown in <em>Figure 8</em>.</p>
+    <p><img src="../images/FileJndiDlg.jpg" width="792" height="480" alt="File Based JNDI"><br>
+    <em>Figure 8 </em></p>
+    <p>After filling out the connection URL click OK to create the JNDI file. To use the file JNDI open the JmsStream Configuration and copy the &quot;JNDI Connection Factory Name&quot; from the Create Local File JNDI form to the &quot;Connection Factory&quot; on JmsStream Configuration. Then select &quot;Use local file based JNDI&quot;. This is shown in <em>Figure 9</em>.</p>
+    <p><img src="../images/ConfigForFileJndi.jpg" width="667" height="339" alt="Config to use JNDI File"><br>
+    <em>Figure 9</em></p>
+    <p>&nbsp;</p>
+<h3><a name="runningEXE" id="runningEXE1"/>Windows EXE Versions</h3>
+ 	<p><code>JmsStream.exe</code> and <code>JmsStreamGUI.exe </code> are a Windows EXE version of JmsStream and JmsStreamGUI. They do not require Java to be installed on the Windows machine. They have all the same functionality as the JAR versions. The EXE versions will have the same performance as the JAR versions running on JRE 1.7.0. <code>JmsStream.exe</code> has a default maximum memory of 32MB and <code>JmsStreamGUI.exe</code> has a default maximum memory of 128MB. You can add more memory by using the VM pass-through parameter. </p>
+ 	<p>To add a VM pass-through parameters to the <code>JmsStream.exe</code> or <code>JmsStreamGUI.exe</code> use the syntax -J[VM parameter]. Example:</p>
+  <ul>
+ 	  <li><code>JmsSteamGUI.exe -J-Xmx256m</code></li>
+ 	  <li><code>JmsStremGUI.exe -J-cp &quot;c:\Jboss\jbossall-client.jar&quot;</code></li>
+  </ul>
+<p>&nbsp;</p>
+<h2><a name="limitations"/> Limitations </h2>
+    <ul>
+      <li>Run <code>java -jar JmsStream.jar -notes </code>for latest issues and limitations.</li>
+      <li>   Tested only on Windows 7, Red Hat Enterprise Linux 5 and 6.</li>
+      <li> JmsStream captures the following message types: MapMessage, TextMessage, BytesMessage, and ObjectMessage.</li>
+      <li> JmsStream sends the following message types: MapMessage, TextMessage, and BytesMessage</li>
+      <li> Supports only one (1) destination for listening per instance; however, wildcards (*, &gt;) are supported.
+        (request reply doses support multiple reply destinations).</li>
+      <li>Cannot append to ZIP files.</li>
+      <li>Enabling Verbose Message Output to Screen in the JmsStreamGUI configuration will increase memory usage and  reduce the publication and subscription rates. For higher publication rates use <code>-stats 2</code>.</li>
+      <li>The JmsStreamGUI will only display ISO8859-1 and UTF-8 characters. UTF-16 will not display in the JmsStreamGUI</li>
+      <li>JmsStream screen output is limited to the console default character set of the machine. Message capture and replay are not affected by this limitation.</li>
+      <li>Once the SSL trace or SSL debug options are set in JmsStreamGUI and the start button is pressed, you must stop and restart JmsStreamGUI for changes to SSL trace and SSL debug to take affect. This is due to the SSL libraries not allowing the SSL trace or SSL debug to be changed once a connection is initialized.</li>
+  </ul>
+<p>&nbsp;</p>	
+      <hr>
+<address><a href="mailto:abailey@tibco.com">abailey@tibco.com</a></address>
+<!-- Created: 4 May 2006 -->
+<!-- hhmts start -->
+Last modified: 
+07 October 2011
+<!-- hhmts end -->
+
+  </body>
+</html>

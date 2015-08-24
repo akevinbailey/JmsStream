@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Class-Path: lib/properties.jar lib/jms-2.0.jar lib/jbossts/commons-log
+ ging.jar lib/jbossts/jbossjta.jar lib/jbossts/jta-1_1-classes.zip lib
+ /jbossts/log4j.jar lib/jndi/fscontext.jar lib/ems/tibjms.jar lib/ems/
+ tibcrypt.jar lib/amq/activemq-all-5.5.0.jar lib/hornetq/hornetq-core-
+ client-java5.jar lib/hornetq/hornetq-jms-client-java5.jar lib/hornetq
+ /jnp-client.jar lib/hornetq/netty.jar lib/slf4j/log4j-1.2.16.jar lib/
+ slf4j/slf4j-api-1.5.8.jar lib/slf4j/slf4j-log4j12-1.5.8.jar
+Main-Class: com.tibco.util.JmsStream
+

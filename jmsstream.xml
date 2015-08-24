@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jmsstream" default="all">
+  
+  
+  <property file="jmsstream.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="512m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.java_1.6" value="${jdk.home.java_1.6}/bin"/>
+  <path id="jdk.classpath.java_1.6">
+    <fileset dir="${jdk.home.java_1.6}">
+      <include name="jre/lib/alt-rt.jar"/>
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.java_1.6}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.java_1.6}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.java_1.6"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.jboss_transaction_manager.classpath">
+    <pathelement location="${basedir}/lib/jbossts/properties.jar"/>
+    <pathelement location="${basedir}/../../../Java/JBOSSTS_4_2_3_SP7/lib/ext/commons-logging.jar"/>
+    <pathelement location="${basedir}/../../../Java/JBOSSTS_4_2_3_SP7/lib/ext/concurrent.jar"/>
+    <pathelement location="${basedir}/../../../Java/JBOSSTS_4_2_3_SP7/lib/ext/jbossts-common.jar"/>
+    <pathelement location="${basedir}/../../../Java/JBOSSTS_4_2_3_SP7/lib/ext/jta-spec1_0_1.jar"/>
+    <pathelement location="${basedir}/../../../Java/JBOSSTS_4_2_3_SP7/lib/ext/log4j-1.2.8.jar"/>
+    <pathelement location="${basedir}/../../../Java/JBOSSTS_4_2_3_SP7/lib/jbossjts.jar"/>
+  </path>
+  
+  <path id="library.slf4j.classpath">
+    <pathelement location="${basedir}/../../../Java/slf4j-1.5.8/slf4j-api-1.5.8.jar"/>
+    <pathelement location="${basedir}/../../../Java/slf4j-1.5.8/slf4j-simple-1.5.8.jar"/>
+  </path>
+  
+  
+  <!-- Global Libraries -->
+  
+  <path id="library.alloylookandfeel_1.4.classpath">
+    <pathelement location="C:/Java/AlloyLookAndFeel/alloy.jar"/>
+  </path>
+  
+  <path id="library.jgoodies_forms_1.2.classpath">
+    <pathelement location="C:/Java/JGoodies/forms-1.2.1/forms-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.tibco_ems_5.1.classpath">
+    <pathelement location="C:/tibco/ems/5.1/lib/jms.jar"/>
+    <pathelement location="C:/tibco/ems/5.1/lib/tibcrypt.jar"/>
+    <pathelement location="C:/tibco/ems/5.1/lib/tibjms.jar"/>
+    <pathelement location="C:/tibco/ems/5.1/lib/tibjmsadmin.jar"/>
+  </path>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module JmsStream -->
+  
+  <dirname property="module.jmsstream.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.jmsstream" value="${jdk.home.java_1.6}"/>
+  <property name="module.jdk.bin.jmsstream" value="${jdk.bin.java_1.6}"/>
+  <property name="module.jdk.classpath.jmsstream" value="jdk.classpath.java_1.6"/>
+  
+  <property name="compiler.args.jmsstream" value="${compiler.args}"/>
+  
+  <property name="jmsstream.output.dir" value="${module.jmsstream.basedir}/JmsStreamCMD/classes"/>
+  <property name="jmsstream.testoutput.dir" value="${module.jmsstream.basedir}/JmsStreamCMD/classes"/>
+  
+  <path id="jmsstream.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jmsstream.module.classpath">
+    <path refid="${module.jdk.classpath.jmsstream}"/>
+    <path refid="library.tibco_ems_5.1.classpath"/>
+    <path refid="library.jboss_transaction_manager.classpath"/>
+    <path refid="library.slf4j.classpath"/>
+  </path>
+  
+  <path id="jmsstream.runtime.module.classpath">
+    <pathelement location="${jmsstream.output.dir}"/>
+    <path refid="library.tibco_ems_5.1.classpath"/>
+    <path refid="library.jboss_transaction_manager.classpath"/>
+    <path refid="library.slf4j.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jmsstream">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jmsstream">
+    <patternset refid="excluded.from.module.jmsstream"/>
+  </patternset>
+  
+  <path id="jmsstream.module.sourcepath">
+    <dirset dir="${module.jmsstream.basedir}/JmsStreamCMD">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jmsstream" depends="compile.module.jmsstream.production,compile.module.jmsstream.tests" description="Compile module JmsStream"/>
+  
+  <target name="compile.module.jmsstream.production" description="Compile module JmsStream; production classes">
+    <mkdir dir="${jmsstream.output.dir}"/>
+    <javac destdir="${jmsstream.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jmsstream}/javac">
+      <compilerarg line="${compiler.args.jmsstream}"/>
+      <bootclasspath refid="jmsstream.module.bootclasspath"/>
+      <classpath refid="jmsstream.module.classpath"/>
+      <src refid="jmsstream.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jmsstream"/>
+    </javac>
+    
+    <copy todir="${jmsstream.output.dir}">
+      <fileset dir="${module.jmsstream.basedir}/JmsStreamCMD/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jmsstream.tests" depends="compile.module.jmsstream.production" description="compile module JmsStream; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jmsstream" description="cleanup module">
+    <delete dir="${jmsstream.output.dir}"/>
+    <delete dir="${jmsstream.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module JmsStreamGUI -->
+  
+  <dirname property="module.jmsstreamgui.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.jmsstreamgui" value="${jdk.home.java_1.6}"/>
+  <property name="module.jdk.bin.jmsstreamgui" value="${jdk.bin.java_1.6}"/>
+  <property name="module.jdk.classpath.jmsstreamgui" value="jdk.classpath.java_1.6"/>
+  
+  <property name="compiler.args.jmsstreamgui" value="${compiler.args}"/>
+  
+  <property name="jmsstreamgui.output.dir" value="${module.jmsstreamgui.basedir}/JmsStreamGUI/classes"/>
+  <property name="jmsstreamgui.testoutput.dir" value="${module.jmsstreamgui.basedir}/JmsStreamGUI/classes"/>
+  
+  <path id="jmsstreamgui.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jmsstreamgui.module.classpath">
+    <path refid="${module.jdk.classpath.jmsstreamgui}"/>
+    <pathelement location="${jmsstream.output.dir}"/>
+    <path refid="library.tibco_ems_5.1.classpath"/>
+    <path refid="library.jboss_transaction_manager.classpath"/>
+    <path refid="library.jgoodies_forms_1.2.classpath"/>
+    <path refid="library.alloylookandfeel_1.4.classpath"/>
+    <path refid="library.slf4j.classpath"/>
+  </path>
+  
+  <path id="jmsstreamgui.runtime.module.classpath">
+    <pathelement location="${jmsstreamgui.output.dir}"/>
+    <path refid="jmsstream.runtime.module.classpath"/>
+    <path refid="library.jgoodies_forms_1.2.classpath"/>
+    <path refid="library.alloylookandfeel_1.4.classpath"/>
+    <path refid="library.slf4j.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jmsstreamgui">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jmsstreamgui">
+    <patternset refid="excluded.from.module.jmsstreamgui"/>
+  </patternset>
+  
+  <path id="jmsstreamgui.module.sourcepath">
+    <dirset dir="${module.jmsstreamgui.basedir}/JmsStreamGUI">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jmsstreamgui" depends="compile.module.jmsstreamgui.production,compile.module.jmsstreamgui.tests" description="Compile module JmsStreamGUI"/>
+  
+  <target name="compile.module.jmsstreamgui.production" depends="compile.module.jmsstream" description="Compile module JmsStreamGUI; production classes">
+    <mkdir dir="${jmsstreamgui.output.dir}"/>
+    <javac destdir="${jmsstreamgui.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jmsstreamgui}/javac">
+      <compilerarg line="${compiler.args.jmsstreamgui}"/>
+      <bootclasspath refid="jmsstreamgui.module.bootclasspath"/>
+      <classpath refid="jmsstreamgui.module.classpath"/>
+      <src refid="jmsstreamgui.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jmsstreamgui"/>
+    </javac>
+    
+    <copy todir="${jmsstreamgui.output.dir}">
+      <fileset dir="${module.jmsstreamgui.basedir}/JmsStreamGUI/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jmsstreamgui.tests" depends="compile.module.jmsstreamgui.production" description="compile module JmsStreamGUI; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jmsstreamgui" description="cleanup module">
+    <delete dir="${jmsstreamgui.output.dir}"/>
+    <delete dir="${jmsstreamgui.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.jmsstream, clean.module.jmsstreamgui" description="cleanup all"/>
+  
+  <target name="all" depends="init, clean, compile.module.jmsstream, compile.module.jmsstreamgui" description="build all"/>
+</project>

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: lib/gui/alloy.jar lib/gui/jgoodies-common-1.4.0.jar lib/gu
+ i/jgoodies-forms-1.6.0.jar JmsStream.jar
+Main-Class: com.tibco.util.gui.JmsStreamGUI
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MapMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Development\IntelliJ\JmsStream\MapMessage.xsd">
+	<node type="String" name="test">test</node>
+	<MapMessage name="node1">
+		<node type="String" name="test">node</node>
+		<node type="String" name="test">test</node>
+		<MapMessage name="node1.1">
+			<node type="String" name="qqq">shwh</node>
+			<node type="String" name="2u37">3323</node>
+		</MapMessage>
+	</MapMessage>
+	<node type="String" name="name">node</node>
+	<node type="String" name="bbb">ddd</node>
+	<MapMessage name="node2">
+		<node type="String" name="xxx">ttt</node>	
+	</MapMessage>
+</MapMessage>

@@ -1,0 +1,526 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>JmsStream Command-line Options</title>
+  </head>
+
+  <body>
+     <h1>Command Line Options  </h1>
+  <p> Usage of JmsStream:  (The &lt;&gt; brackets mean a mandatory entry.  The [] brackets mean an optional entry.)</p>
+  <p> <code>java -jar JmsStream.jar -configfile &lt;file-name&gt;</code><br>
+    or<br>
+    <code>java -jar JmsStream.jar -&lt;send | listen | requestreply&gt; [destination] -&lt;[queue | topic | generic] | connectionfactory&gt;  [options]</code></p>
+  <table width="900" border="0">
+    <tr>
+      <td width="300"><strong> Configuration File</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-configfile &lt;file-name&gt;</code></td>
+      <td>Read the configuration from the JmsStream configuration file. 
+    (No other args are necessary.)</td>
+    </tr>
+    <tr>
+      <td width="300"><code></code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"> <strong> Connection Options</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-jmsclient &lt;TIBCO_EMS | APACHE_AMQ<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | HORNETQ&gt;</code></td>
+      <td>(optional) Sets the JMS client libraries to a specific vendor's product. (when the arg is absent the default is TIBCO_EMS)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-send [destination]</code></td>
+      <td>Send messages to queue or topic. The [destination] is optional. If
+[destination] is not given the send destination is read from the
+messages in the file. (must supply the -file &lt;file-name&gt; argument)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-listen &lt;destination&gt;</code></td>
+      <td>Listens for messages from a queue or topic  &lt;destination&gt;.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-requestreply</code></td>
+      <td>Send messages to topic or queue and listen for reply. The sending
+destination is taken form the -send arg and the listening destination is
+taken from the -listen arg.  The either of these arguments are not present
+then the sending and/or listening destinations are taken form the Message
+file. (Must supply the -file &lt;file-name&gt; argument with -requestreply)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-queue</code></td>
+      <td>Force the destination to be a queue regardless of connection factory.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-topic</code></td>
+      <td>Force the destination to be a topic regardless of connection factory.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-generic</code></td>
+      <td>Force the destination to be generic regardless of connection factory.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-connectionfactory &lt;name&gt;</code></td>
+      <td>Use a connection factory (default: QueueConnectionFactory for queues, TopicConnectionFactory for topic, and GenericConnectionFactory
+for generic destinations)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-replytimeout &lt;ms&gt;</code><br></td>
+      <td>The reply timeout value in &lt;ms&gt; milliseconds.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-asyncreply</code></td>
+      <td>The request will publish all messages in the file and set
+up a listener for each reply. (default is to block
+the request thread until the reply is received)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-jndicontextfactory &lt;name&gt;</code></td>
+      <td>Initial context factory for the JNDI.
+(default com.tibco.tibjms.naming.TibjmsInitialContextFactory)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-providerurl &lt;name&gt;</code></td>
+      <td>Context URL for JNDI lookup.
+(default: tibjmsnaming://localhost:7222)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-user &lt;name&gt;</code></td>
+      <td>User name used for both JNDI and JMS.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-password &lt;string&gt;</code></td>
+      <td>Password used for both JNDI and JMS</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-jndiuser &lt;name&gt;</code></td>
+      <td>JNDI security principal.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-jndipassword &lt;string&gt;</code></td>
+      <td>JNDI security credentials.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-jmsuser &lt;name&gt;</code></td>
+      <td>JMS user name.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-jmspassword &lt;string&gt;</code></td>
+      <td>JMS user password.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-clientid &lt;name&gt;</code></td>
+      <td>JMS client ID.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-jndiprop &lt;propname&gt;=&lt;value&gt;</code></td>
+      <td>a JNDI custom property, where &lt;propname&gt; is the JNDI property,
+&lt;value&gt; is the string representation of the property value.
+(this argument can be repeated for entering of multiple custom
+JNDI properties</td>
+    </tr>
+    <tr>
+      <td width="300"><code></code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><strong>SSL Options</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl</code></td>
+      <td>Verify SSL transport. (recommended for all SSL communication)</td>
+    </tr>
+    <tr>
+      <td width="300"><strong><em>OpenSSL Options (TIBCO_EMS):</em></strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_jndi</code></td>
+      <td>Use SSL for JNDI lookup.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_auth_only</code></td>
+      <td>Use SSL encryption for authentication only. (TIBCO EMS only)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_vendor &lt;name&gt;</code></td>
+      <td>SSL vendor: 'j2se-default', 'j2se', 'entrust61', or 'ibm'.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_ciphers &lt;name&gt;</code></td>
+      <td>OpenSSL names for the cipher suites used for encryption.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_trace</code></td>
+      <td>Trace SSL initialization.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_debug_trace</code></td>
+      <td>Trace SSL handshake and related.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_trusted &lt;file1 ...&gt;</code></td>
+      <td>File(s) with trusted certificate(s).</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_hostname &lt;host-name&gt;</code></td>
+      <td>Name expected in the server certificate.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_identity &lt;file-name&gt;</code></td>
+      <td>Client identity file.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_password &lt;string&gt;</code></td>
+      <td>Password for client identity file.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_key &lt;file-name&gt;</code></td>
+      <td>Client key file or private key file.  (only valid for 'entrust' and 'ibm')</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-verify_host_name</code></td>
+      <td>Host name verification.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-verify_host</code></td>
+      <td>Host verification.</td>
+    </tr>
+    <tr>
+      <td width="300"><strong><em>Netty SSL (TIBCO_EMS):</em></strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_keystore_type &lt;JKS | PKCS12&gt;</code></td>
+      <td>Client keystore type.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_keystore &lt;file-name&gt;</code></td>
+      <td>FQN of the client keystore file.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_keystore_pwd &lt;string&gt;</code></td>
+      <td>Password for the client keystore file.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_truststore_type &lt;JKS | PKCS12&gt;</code></td>
+      <td>Trust keystore type.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_truststore &lt;file-name&gt;</code></td>
+      <td>FQN of the trust keystore file.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_truststore_pwd &lt;string&gt;</code></td>
+      <td>Password for the trust keystore file.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ssl_debug &lt;string&gt;</code></td>
+      <td>A Java SSL debug string.</td>
+    </tr>
+    <tr>
+      <td width="300"><code></code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><strong>Input/Output Options</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-file &lt;file-name&gt;</code></td>
+      <td>Read/write captured messages from/to JmsStream file &lt;file-name&gt; for replay.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-zip [entry1 ...]</code></td>
+      <td>Read/write JmsStream file (entry) from/to a ZIP compressed file.
+(default: read all entries in zip)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-filetype &lt;text | xml&gt;</code></td>
+      <td>JmsStream text or XML file to read from / write to for replay.
+(xml file is deprecated. Only used for backwards compatibility)
+(object type messages cannot be re-published) (default is text)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-fileappend</code></td>
+      <td>Append output to -file &lt;file-name&gt;. (default is to create a new file)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-replyfile &lt;file-name&gt;</code></td>
+      <td>Write capture reply messages to &lt;file-name&gt; for -requestreply.
+(requestreply mode only)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-stats &lt;ms&gt;</code></td>
+      <td>Will collect and print statistical information every &lt;sec&gt; seconds.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-verbose</code></td>
+      <td>Print detailed message text type body, binary body, map message, or an
+object.toString() to stdout when sent/received.
+(not setting -verbose will print only basic message info to screen)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-noecho</code></td>
+      <td>Do not print messages to the screen.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-showconfig</code></td>
+      <td>Shows configuration and exits.</td>
+    </tr>
+    <tr>
+      <td><strong>Listener Options</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code> -ackmode &lt;AUTO_ACKNOWLEDGE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| CLIENT_ACKNOWLEDGE <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| DUPS_OK_ACKNOWLEDGE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| TIBCO_ACKNOWLEDGE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| NO_ACKNOWLEDGE&gt;</code></td>
+      <td>default acknowledge mode<br>
+      standard behavior<br>
+      standard behavior<br>
+      com.tibco.tibjms.Tibjms.EXPLICIT_CLIENT_ACKNOWLEDGE<br>
+      no acknowledgement</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-noconfirm</code></td>
+      <td>JmsStream will not send client acknowledgments.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-selector &lt;string&gt;</code></td>
+      <td>Set JMS message selector.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-durable &lt;name&gt;</code></td>
+      <td>Use a durable topic subscriber with name &lt;name&gt;.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-unsubscribe</code></td>
+      <td>Unsubscribe from the durable topic on exit. (requires -durable &lt;name&gt;)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-browse</code></td>
+      <td>Browse the queue. (will not remove the messages from queue)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-stopafter &lt;number&gt;</code></td>
+      <td>Stop listening and exit after &lt;number&gt; of received messages.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-timed</code></td>
+      <td>Record timed statistics for real-life replay.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-rcvtimestamp &lt;property&gt;</code></td>
+      <td>Add receiving timestamp to &lt;property&gt; message property.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-echoxml</code></td>
+      <td>Print messages text type body and map message in XML format
+to stdout when received. (listen mode only)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-echocsv</code></td>
+      <td>Print message header and property fields in CSV format
+to stdout when received. (listen mode only)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-raw</code></td>
+      <td>Print message.toString() to the screen and do not write to file.
+(listen mode only)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-zipmsgperentry &lt;number&gt;</code></td>
+      <td>Maximum messages per ZIP entry. (breaks up large file 
+captures into separate ZIP entries in the ZIP file)
+(automatically puts -zip)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-csvfile &lt;file-name&gt;</code></td>
+      <td>Write captured message headers and properties to CVS file
+used for gathering performance info. (listen mode only)</td>
+    </tr>
+    <tr>
+      <td width="300"><code></code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><strong>Sender Options</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code> -deliverymode &lt;NON_PERSISTENT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| PERSISTENT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| RELIABLE_DELIVERY&gt;<br>
+      </code></td>
+      <td>      Overrides the delivermode in the message.<br>
+      <br>
+      <br></td>
+    </tr>
+    <tr>
+      <td width="300"><code>-compress</code></td>
+      <td>Compress the messages when sending. (TIBCO EMS only)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-speed &lt;number&gt;</code></td>
+      <td>Speed-up or slow-down replay if using timed play back. (default 1) (requires the messages were captured using the -timed arg)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-fileloop &lt;int&gt;</code></td>
+      <td>Loop over the read file and re-send the messages
+&lt;int&gt; times. &lt;int&gt; = 0 will continue indefinitely</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-sndtimestamp &lt;property&gt;</code></td>
+      <td>Add sending timestamp to message property &lt;property&gt;.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-sequence &lt;property&gt;</code></td>
+      <td>Add sending message sequence number to message
+property &lt;property&gt;.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-rate &lt;number&gt;</code></td>
+      <td>Number of messages to send per second.
+(default 0 = fast as possible)</td>
+    </tr>
+    <tr>
+      <td width="300"><strong><em>Following params must be used together</em></strong><br>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-startrate &lt;number&gt;</code></td>
+      <td>(optional) The starting message rate to send per second.
+(if -startrate is not given the message rate starts at
+maxrate/numberofintervals)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-maxrate &lt;number&gt;</code></td>
+      <td>Maximum messages to send per second.
+(program will exit after achieving maxrate)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-numberofintervals &lt;number&gt;</code></td>
+      <td>Number of message intervals between -startrate and -maxrate. (maxrate/numberofintervals = message rate step size)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-intervalsize &lt;number&gt;</code></td>
+      <td>Number of messages per interval. (overrides -fileloop)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-ratestamp &lt;property&gt;</code></td>
+      <td>(optional) Add current msg/sec rate to message
+property &lt;property&gt;.</td>
+    </tr>
+    <tr>
+      <td width="300"><code></code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><strong>Transaction Options</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-trans &lt;jms | xa&gt;</code></td>
+      <td>'jms' is a simple JMS transaction session, 'xa' uses a XA Connection
+Factory.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-commitonexit</code></td>
+      <td>Commit pending message transaction when program exits.</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-transmsgnum &lt;int&gt;</code></td>
+      <td>(optional) The number of messages in a transaction.</td>
+    </tr>
+    <tr>
+      <td width="300"><strong><em>Following params are for XA Transactions only:
+      </em></strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-transmgrtype &lt;local | nomgr&gt;</code></td>
+      <td>(optional) XA Transaction Type. 'local' uses a local
+JBossTS transaction manager. 'nomgr' use a basic XA
+without a transaction manager. (default: local)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-transjndiname &lt;name&gt;</code></td>
+      <td>(optional) JTA Transaction Manager name in the JNDI
+server. (default: TransactionManager)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-transtimeout &lt;int&gt;</code></td>
+      <td>(optional) XA Transaction timeout in seconds.
+(default: 0)</td>
+    </tr>
+    <tr>
+      <td width="300"><code></code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><strong>Other JmsStream Options</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-encoding &lt;name&gt;</code></td>
+      <td>Set message encoding. (US-ASCII,
+        ISO-8859-1, 
+        UTF-8, 
+        UTF-16BE, 
+        UTF-16LE, 
+      UTF-16) (default UTF-8)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-getbodylength &lt;file-name&gt;</code></td>
+      <td>Get the length of the message body in the file.
+(used to determine the BodyLength value when modifying or
+creating a message body in the send file)
+(this should be the only argument)</td>
+    </tr>
+    <tr>
+      <td width="300"><code></code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><strong>Help Option</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-help -?</code></td>
+      <td>Usage information</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-author</code></td>
+      <td>Contact information</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-version</code></td>
+      <td>Displays version information</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-license</code></td>
+      <td>JmsStream usage license (by using this software you agree to the license)</td>
+    </tr>
+    <tr>
+      <td width="300"><code>-notes</code></td>
+      <td>Application comments and examples</td>
+    </tr>
+  </table>
+  <p>
+    <!-- Created: 4 May 2006 -->
+<!-- hhmts start -->
+Last modified: 
+07 October 2011
+<!-- hhmts end -->
+  </p>
+  </body>
+</html>

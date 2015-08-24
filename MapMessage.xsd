@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by Admin (Altova) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MapMessage">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element name="node" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType mixed="true">
+							<xs:attribute name="name" type="xs:string" use="required"/>
+							<xs:attribute name="type" type="xs:string" use="required"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="MapMessage" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

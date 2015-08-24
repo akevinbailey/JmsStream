@@ -1,0 +1,160 @@
+
+#---------- #1 : ID:EMS-SERVER.1D744B7A4BD52E:3 ----------#
+<MSG_INFO>
+    <wait>4</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.631" jmsServerTimestamp="2010-02-16T12:37:37.501">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:3" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257501"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79001</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #2 : ID:EMS-SERVER.1D744B7A4BD52E:4 ----------#
+<MSG_INFO>
+    <wait>2</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.636" jmsServerTimestamp="2010-02-16T12:37:37.505">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:4" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257505"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79002</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #3 : ID:EMS-SERVER.1D744B7A4BD52E:5 ----------#
+<MSG_INFO>
+    <wait>1</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.638" jmsServerTimestamp="2010-02-16T12:37:37.506">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:5" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257506"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79001</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #4 : ID:EMS-SERVER.1D744B7A4BD52E:6 ----------#
+<MSG_INFO>
+    <wait>0</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.639" jmsServerTimestamp="2010-02-16T12:37:37.512">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:6" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257512"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79002</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #5 : ID:EMS-SERVER.1D744B7A4BD52E:7 ----------#
+<MSG_INFO>
+    <wait>1</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.641" jmsServerTimestamp="2010-02-16T12:37:37.514">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:7" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257514"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79001</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #6 : ID:EMS-SERVER.1D744B7A4BD52E:8 ----------#
+<MSG_INFO>
+    <wait>1</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.643" jmsServerTimestamp="2010-02-16T12:37:37.515">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:8" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257515"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79002</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #7 : ID:EMS-SERVER.1D744B7A4BD52E:9 ----------#
+<MSG_INFO>
+    <wait>1</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.653" jmsServerTimestamp="2010-02-16T12:37:37.516">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:9" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257516"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79001</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #8 : ID:EMS-SERVER.1D744B7A4BD52E:10 ----------#
+<MSG_INFO>
+    <wait>0</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.654" jmsServerTimestamp="2010-02-16T12:37:37.518">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:10" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257518"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79002</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #9 : ID:EMS-SERVER.1D744B7A4BD52E:11 ----------#
+<MSG_INFO>
+    <wait>1</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.656" jmsServerTimestamp="2010-02-16T12:37:37.519">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:11" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257519"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79001</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+
+
+#---------- #10 : ID:EMS-SERVER.1D744B7A4BD52E:12 ----------#
+<MSG_INFO>
+    <wait>1</wait>
+    <message type="TextMessage" messageSelector="" receiveTime="2010-02-16T12:38:38.657" jmsServerTimestamp="2010-02-16T12:37:37.519">
+        <header JMSMessageID="ID:EMS-SERVER.1D744B7A4BD52E:12" JMSDestination="queue.sample" JMSDestinationType="Queue" JMSCorrelationID="ҖҸФШЫЭѓ" JMSDeliveryMode="2" JMSPriority="4" JMSTimestamp="1266320257519"/>
+        <properties>
+            <property name="JMSXGroupID" type="String">٤٣٢١٩٩</property>
+            <property name="ae_tracking" type="String">79002</property>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=66
+Some UTF-8:  ҖҸФШЫЭѓ
+Aribic numbers:  ١٠٣٦٨٤٣٥١٠
+

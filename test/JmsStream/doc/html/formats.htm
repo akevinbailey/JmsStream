@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>JmsStream File Formats</title>
+    <style type="text/css">
+<!--
+.style2 {font-style: italic}
+-->
+    </style>
+</head>
+  <body>
+    <h2><a name="intro"/>JmsStream Save File Formats</h2>
+    <p>
+    JmsStream 2.7 can capture messages in two  file formats and can produce messages from two file formats. <a href="#text" target="_self">Text file format </a>and <a href="#cvs1" target="_self">CVS file format</a> are the two types of save files. JmsStream can publish from the <a href="#text" target="_self">Text file format</a> and the <a href="#xml" target="_self">XML file format</a>.  A pure XML format is desirable because it is easy to describe (XSD) and  parse. However, in practice the SAX parser has performance problems with large  message bodies and imbedded XML. The XML file format has been deprecated and is only provided for backward compatibility.
+  <h2>&nbsp;</h2>
+  <h2><a name="text"/>Text File Format </h2>
+    <p> The Text file format is the primary JmsStream capture and replay  format. It is a hybrid text and XML format. A pure XML file format is to slow for large JMS Binary and JMS Text type messages.  The Text File Format is also better at capturing XML messages because it can capture the raw XML without having to escape the XML identifiers. The default file extension for the Text file format is <code>.jmss</code>. Once messages are captured, you can change their content by editing
+	the text file.
+    The best way to edit the captured messages is to use the graphical message editor in the JmsStreamGUI. See <a href="running.htm#runningGUI" target="_self">JmsStreamGUI section of Running JmsStream</a> page for more information.
+<p>If a graphical environment is not available you can edit the message capture (<code>.jmss)</code> file manually. When editing the message body  make sure the <code>BodyLength</code> parameter matches the new body length.  Also, the user can create new messages as long as the format conforms to the JmsStream Text file format. When changing or creating the text file on Windows OS be sure to omit the line feed characters '\r' from the body length calculation. Use <code>-getbodylength</code> argument to ascertain  the body length by creating a file that contains only the message body, then execute <code>java -jar JmsStream.jar -getbodylength &lt;file-name&gt;</code>.  With
+  <code>&lt;file-name&gt;</code> being the name of the file that contains the message body.  The body length will be displayed on the screen. Copy this body length into message <code>BodyLength= </code>in the replay  file.    
+  <p><span class="style2"><strong>Note:</strong> JmsStream
+    loads all the messages in a file into memory. This is to improve performance, but if the file is large the Java VM can run out of memory. To get around this issue use a ZIP file with multiple file entries. See the <a href="#zip1" target="_self">ZIP Compressed Text File Format</a> section for further details. </span>
+<h3>The JmsStream Text File Format</h3>
+    <p>
+Every message begins with the following line: <code>#---------- #&lt;msg count&gt; : &lt;JMSMessageID&gt; ----------#</code><br>
+After this tile is the message header information in XML format the adheres to the following schema:</p>
+  <pre>&lt;?xml version = &quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;<br>&lt;xsd:schema xmlns:xsd = &quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault = &quot;qualified&quot;&gt;<br>	&lt;xsd:attributeGroup name = &quot;message_attributes&quot;/&gt;<br>	&lt;xsd:element name = &quot;MSG_INFO&quot;&gt;<br>		&lt;xsd:complexType&gt;<br>			&lt;xsd:sequence&gt;<br>				&lt;xsd:element name = &quot;wait&quot; type = &quot;xsd:integer&quot; minOccurs = &quot;0&quot;/&gt;<br>				&lt;xsd:element name = &quot;commitTrans&quot; type = &quot;xsd:boolean&quot; minOccurs = &quot;0&quot;/&gt;<br>				&lt;xsd:element name = &quot;message&quot; maxOccurs = &quot;unbounded&quot;&gt;<br>					&lt;xsd:complexType&gt;<br>						&lt;xsd:all&gt;<br>							&lt;xsd:element name = &quot;header&quot;&gt;<br>								&lt;xsd:complexType&gt;<br>									&lt;xsd:attribute name = &quot;JMSDestination&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSDeliveryMode&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSExpiration&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSPriority&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSMessageID&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSTimestamp&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSCorrelationID&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSReplyTo&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSType&quot; type = &quot;xsd:string&quot;/&gt;<br>									&lt;xsd:attribute name = &quot;JMSRedelivered&quot; type = &quot;xsd:string&quot;/&gt;<br>								&lt;/xsd:complexType&gt;<br>							&lt;/xsd:element&gt;<br>							&lt;xsd:element name = &quot;properties&quot;&gt;<br>								&lt;xsd:complexType&gt;<br>									&lt;xsd:sequence&gt;<br>										&lt;xsd:element name = &quot;property&quot; minOccurs = &quot;0&quot; maxOccurs = &quot;unbounded&quot;&gt;<br>											&lt;xsd:complexType&gt;<br>												&lt;xsd:simpleContent&gt;<br>													&lt;xsd:extension base = &quot;xsd:string&quot;&gt;<br>														&lt;xsd:attribute name = &quot;name&quot; type = &quot;xsd:string&quot;/&gt;<br>														&lt;xsd:attribute name = &quot;type&quot; type = &quot;xsd:string&quot;/&gt;<br>													&lt;/xsd:extension&gt;<br>												&lt;/xsd:simpleContent&gt;<br>											&lt;/xsd:complexType&gt;<br>										&lt;/xsd:element&gt;<br>									&lt;/xsd:sequence&gt;<br>								&lt;/xsd:complexType&gt;<br>							&lt;/xsd:element&gt;<br>						&lt;/xsd:all&gt;<br>						&lt;xsd:attribute name = &quot;type&quot; type = &quot;xsd:string&quot;/&gt;<br>						&lt;xsd:attribute name = &quot;messageSelector&quot; type = &quot;xsd:string&quot;/&gt;<br>						&lt;xsd:attribute name = &quot;originationTime&quot; type = &quot;xsd:dateTime&quot;/&gt;<br>						&lt;xsd:attribute name = &quot;receiveTime&quot; type = &quot;xsd:dateTime&quot;/&gt;<br>						&lt;xsd:attribute name = &quot;jmsServerTimestamp&quot; type = &quot;xsd:dateTime&quot;/&gt;<br>					&lt;/xsd:complexType&gt;<br>				&lt;/xsd:element&gt;<br>			&lt;/xsd:sequence&gt;<br>		&lt;/xsd:complexType&gt;<br>	&lt;/xsd:element&gt;<br>&lt;/xsd:schema&gt;</pre>
+  <p>After the message header information comes a line that starts with <code>BodyLength = </code>. The BodyLength is the length in characters of the message body.  The message body starts on the next line. If the message type is a MapMessage then the message body is represent with the following schema:</p>
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot;&gt;<br>    &lt;xsd:element name=&quot;MapMessage&quot;&gt;<br>        &lt;xsd:complexType&gt;<br>            &lt;xsd:sequence&gt;<br>                &lt;xsd:element ref=&quot;node&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot; /&gt;<br>            &lt;/xsd:sequence&gt;<br>        &lt;/xsd:complexType&gt;<br>    &lt;/xsd:element&gt;<br>    &lt;xsd:element name=&quot;node&quot;&gt;<br>        &lt;xsd:complexType&gt;<br>            &lt;xsd:simpleContent&gt;<br>                &lt;xsd:extension base=&quot;xsd:string&quot;&gt;<br>                    &lt;xsd:attribute name=&quot;name&quot; type=&quot;xsd:string&quot; /&gt;<br>                    &lt;xsd:attribute name=&quot;type&quot; type=&quot;xsd:string&quot; /&gt;<br>                &lt;/xsd:extension&gt;<br>            &lt;/xsd:simpleContent&gt;<br>        &lt;/xsd:complexType&gt;<br>    &lt;/xsd:element&gt;<br>&lt;/xsd:schema&gt;</pre>
+<h3><a name="zip" id="zip1"/>ZIP Compressed Text File Format</h3>
+<p>The Text file format can be saved to and read from a ZIP compressed file using the <code>-zip</code> argument. JmsStream can write a single save file to a ZIP by using the <code>-listen</code>, <code>-file</code> and <code>-zip</code> arguments.<br>
+  <em>Example</em>: <code>java -jar JmsStream.jar -queue -listen queue.sample -user admin -password admin -file &quot;c:\testjmss.zip&quot; -zip save1.jmss</code>.<br>
+  In the above example JmsStream captures  messages on a queue called <code>queue.sample</code> and creates a ZIP file called <code>c:\testjmss.zip</code>. Inside the ZIP file is the JmsStream save file called <code>save1.jmss</code>.<br>
+  <br>
+  JmsStream also can write multiple files (called ZIP entries) to a ZIP file. Because JmsStream loads all the messages in a file into memory, it is best to break up large blocks of message into separate files. This allows JmsStream to captures and replay very large message captures. Use the <code>-zipmsgperentry</code> argument to save the messages in file blocks.<br>
+  <em>Example</em>:  <code>java -jar JmsStream.jar -queue -listen queue.sample -user admin -password admin -file  &quot;c:\testjmss.zip&quot; -zipmsgperentry 1000 -stats 2</code><br>
+  In the above example JmsStream captures messages on a queue called <code>queue.sample</code>, creates a ZIP file called <code>c:\testjmss.zip</code>, creates a new ZIP entry called <code>1.jmss</code> and writes 1000 messages, and every 1000 messages creates an new  ZIP entry of the name <code>&lt;index&gt;.jmss</code>. The command also screen prints message capture statistics every 2 seconds. </p>
+<p>To send the ZIPed messages:<br>
+  <code>java -jar JmsStream.jar -queue  -send  queue.myqueue -user admin -password admin -file  &quot;c:\testjmss.zip&quot; -zip -noecho</code></p>
+<p>&nbsp;</p>
+<h2><a name="xml"/>XML File Format </h2>
+<p>
+      The JmsStream XML file format has been deprecated for performance reasons. JmsStream 2.7 will still publish XML file format messages, but it will no longer capture messages in XML format. Also, the newer performance testing features will not be support the XML format. It is advised that all JmsStream capture files in XML format be converted to Text format for future comparability.</p>
+<p>&nbsp;</p>
+<h2><a name="cvs" id="cvs1"/>CSV File Format </h2>
+    <p>
+      The JmsStream CSV file format is used for capturing message data for analysis purposes, and can not be used to replay (send) messages. CSV file format only captures the JMS header and property fields and discards the message body. The CVS file is setup to make it easy to create performance or stress-test charts in <a href="http://office.microsoft.com/en-us/default.aspx">Microsoft Excel</a> or <a href="http://www.openoffice.org/index.html" target="_blank">OpenOffice.org Calc</a>. See <a href="PerformanceTestingJmsStream.htm" target="_self">Performance Testing with JmsStream</a> for more details. </p>
+	  <h3>The JmsStream CSV File Format</h3>
+	  <p>In the CSV save file the first line is the header describing the fields. The header value <code>UserProperties---&gt;</code> indicates that all of the field past this field are user properties. In the example below the there two messages, each with 4 custom properties in addition to the standard JMS properties. </p>
+	  <pre>JMSMessageID,JMSDestination,JMSReplyTo,JMSCorrelationID,JMSDeliveryMode,JMSPriority,JMSType,JMSExpiration,JMSTimestamp,UserProperties---&gt;
+ID:EMS-SERVER.1044445FBC2726:21,queue.out,,,2,4,,,2006-05-09T01:14:48.095,0,10,2006-05-09T01:14:48.095,CSL_POC
+ID:EMS-SERVER.1044445FBC2726:22,queue.out,,,2,4,,,2006-05-09T01:14:48.095,0,20,2006-05-09T01:14:48.095,CSL_POC</pre>
+      <p>&nbsp;</p>
+    <hr>
+<address><a href="mailto:abailey@tibco.com">abailey@tibco.com</a></address>
+<!-- Created: 4 May 2006 -->
+<!-- hhmts start -->
+Last modified:
+07 October 2011
+<!-- hhmts end -->
+  </body>
+</html>

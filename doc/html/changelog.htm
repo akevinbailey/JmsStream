@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>JmsStream Change Log</title>
+</head>
+
+<body>
+
+<h2>JmsStream Change Log</h2>
+
+<p><strong>Version 2.7.9.1</strong></p>
+<ul>
+    <li>Fixed minor output issue introduced in version 2.7.9</li>
+    <li>Compiled with JDK 1.8_40</li>
+</ul>
+
+<p><strong>Version 2.7.9</strong></p>
+<ul>
+    <li>Fixed minor issue with the stats GUI configuration.</li>
+    <li>Updated the TIBCO EMS libraries to EMS 8.2</li>
+    <li>Compiled with JDK 1.7_67</li>
+</ul>
+
+<p><strong>Version 2.7.8.1</strong></p>
+<ul>
+    <li>No functional change.  Compiled with JDK 1.6_45</li>
+</ul>
+
+<p><strong>Version 2.7.8</strong></p>
+<ul>
+    <li>Fixed race condition when writing to file during async req/rep.</li>
+</ul>
+<p><strong>Version 2.7.7</strong></p>
+<ul>
+    <li>Updated TIBCO EMS libraries to version 7.0</li>
+    <li>Added separate SSL parameters for JNDI and JMS connections.</li>
+    <li>Fixed erroneous log4j SSL messages.</li>
+</ul>
+<p><strong>Version 2.7.6</strong></p>
+<ul>
+    <li>Removed irritating SSL info logging.</li>
+    <li>Updated the slf4j libraries.</li>
+</ul>
+
+<p><strong>Version 2.7.5</strong></p>
+<ul>
+    <li>Fixed issue with custom properties writing to a CSV file.</li>
+    <li>Updated the TIBCO EMS libraries to EMS 6.3</li>
+</ul>
+<p><strong>Version 2.7.4</strong></p>
+<ul>
+    <li>Fixed issue with publishing from a ZIP file.</li>
+</ul>
+<p><strong>Version 2.7.3</strong></p>
+<ul>
+    <li>Fixed save file read issue with unprintable UTF-8 characters in the message body.</li>
+</ul>
+<p><strong>Version 2.7.2</strong></p>
+<ul>
+    <li>Fixed an issue with "Stop After" for queue browsers.</li>
+</ul>
+<p><strong>Version 2.7.1</strong></p>
+<ul>
+    <li>Fixed save file read issue if there were both a carriage return and line feed embedded in the message body.</li>
+</ul>
+<p><strong>Version 2.7.0</strong></p>
+<ul>
+    <li>Added the ability to extract the original client message from a TIBCO EMS system monitor message.</li>
+    <li>Fixed an issue with leaving the connection factory blank.</li>
+    <li>Fixed an issue with show statistics. Changed timings from msec to sec.</li>
+    <li>Updated the TIBCO EMS libraries to EMS 6.1</li>
+    <li>Updated the Apache ActiveMQ libraries to ActiveMQ 5.5.0</li>
+    <li>Updated the JBoss HornetQ libraries to HornetQ 2.2.5</li>
+    <li>Upgraded XA support to JBoss Transaction Service 4.11.0</li>
+</ul>
+<p><strong>Version 2.6.3</strong></p>
+<ul>
+    <li>Fixed issue saving the request response.</li>
+</ul>
+<p><strong>Version 2.6.2</strong></p>
+<ul>
+    <li>Fixed issue using temp queues with request-response.</li>
+    <li>Updated ActiveMQ libraries.</li>
+    <li>Updated JBoss HornetQ libraries.</li>
+</ul>
+<p><strong>Version 2.6.1</strong></p>
+<ul>
+    <li>Updated EMS libraries to EMS 6.0.</li>
+</ul>
+<p><strong>Version 2.6.0</strong></p>
+<ul>
+    <li>Added built-in support for Apache ActiveMQ 5.</li>
+    <li>Added built-in support for JBoss HornetQ 2.</li>
+    <li>Added Apache ActiveMQ and Apache Common Logging libraries in the JmsStream distribution.</li>
+    <li>Added JBoss HornetQ libraries in the JmsStream distribution.</li>
+    <li>Fixed a bug that prevented publishing of compressed messages.</li>
+    <li>Fixed an issue where the -showconfig would display the configuration but continued to execute. It now stops after displaying the configuration as expected.</li>
+    <li>Fixed an issue with -getbodylength. The bug was introduced in 2.5.0, it now gives the correct length.</li>
+</ul>
+<p><strong>Version 2.5.2</strong></p>
+<ul>
+    <li>Fixed issue preventing topic messages. This bug was introduced in version 2.5.1. It is now fixed.</li>
+</ul>
+<p><strong>Version 2.5.1</strong></p>
+<ul>
+    <li>Fixed a bug preventing the sending of UTF-8 and UTF-16 character formats.</li>
+</ul>
+<p><strong>Version 2.5.0</strong></p>
+<ul>
+    <li>Changed the embedded EMS client libraries from version 5.0 to version 5.1.4</li>
+    <li>Upgraded to JBoss Transaction Manager 4.9.0 GA libraries. (You must copy the libraries yourself. See docs.)</li>
+    <li>Changed the default save file extension to .jmss</li>
+    <li>Compiled with JDK 1.6.0_18 but still compatible with JRE 1.5.</li>
+    <li>Added the ability to read the JmsStream parameters from a Java configuration file instead of putting them on the command line.</li>
+    <li>Added the ability to override the sending and/or listening destinations for request/reply messages.</li>
+    <li>Added ability to change the default JMS client libraries to a different JMS Server.</li>
+    <li>Added ability for SSL connections to third-party JMS Servers.</li>
+    <li>Added ability to add custom JNDI settings.</li>
+    <li>Added SLF4j classes to distribution.</li>
+    <li>Fixed a bug in the Topic request/reply where the reply could only be a queue. It is now a Topic as expected.</li>
+    <li>Fixed a issue with writing the origination times in the original request message for request/replies.</li>
+    <li>Fixed a bug that prevented publishing for ZIP save files.</li>
+    <li>Fixed a bug that displayed erroneous "Stop..." messages for request/replies.</li>
+</ul>
+<p><strong>Version 2.4.2</strong></p>
+<ul>
+    <li>Corrected spelling errors in the documentation and JmsStream code.</li>
+</ul>
+<p><strong>Version 2.4.1</strong></p>
+<ul>
+    <li>Add a feature to the listener that will exit the application after receiving x number of messages.</li>
+    <li>Removed JBoss Transaction Manager 4.3.2 SP7 libraries due to possible legal issues. (You must now copy the libraries yourself. See docs.)</li>
+    <li>Removed embedded JARs from inside the EXE. Now the JARs are in the &quot;./lib&quot; directory.</li>
+</ul>
+<p><strong>Version 2.4.0</strong></p>
+<ul>
+    <li>Added support for local XA Transactions through JBossTS transaction manager.</li>
+    <li>Added a simulated XA Transactions without using a transaction manager for performance testing.</li>
+    <li>Changed the embedded EMS client libraries from version 4.4.3 to version 5.0.</li>
+    <li>Includes the JBoss Transaction Manager 4.3.2 SP7 libraries.</li>
+    <li>No longer embed the third party JAR file inside the JmsStream JARs. They are now located in subdirectory and linked by the JAR manifest.</li>
+    <li>JmsStream.exe has all necessary JARs embedded inside the EXE.</li>
+    <li>Added licenses for the JBossTS transaction manager to comply with its GNU Lesser General Public License v.2.1.</li>
+</ul>
+<p><strong>Version 2.3.1</strong></p>
+<ul>
+    <li>No new features.</li>
+    <li>Rearranged some code for more efficiency and added more comments.</li>
+    <li>Changed the embedded EMS client libraries from version 4.3 to version 4.4.3.</li>
+</ul>
+<p><strong>Version 2.3.0</strong></p>
+<ul>
+    <li>Added JMS transaction support.</li>
+    <li>Added argument to use EMS message compression.</li>
+    <li>Compiled using JDK 1.5. JmsStream is no longer compatible with JVM 1.4.</li>
+    <li>Changed save file schema to conform to standard XSD and added the <code>confirmTrans</code> element.</li>
+</ul>
+<p><strong>Version 2.2.1</strong></p>
+<ul>
+    <li>Added ability to capture and publish TIBCO EMS extended MapMessages.</li>
+    <li>Fixed application not setting message encoding.</li>
+    <li>Fixed application incorrectly setting all boolean message properties to false.</li>
+</ul>
+<p><strong>Version 2.2.0</strong></p>
+<ul>
+    <li>Added -stats output for publishing messages</li>
+    <li>Made many internal charges to allow the JmsStream application to work with JmsStream GUI.</li>
+    <li>Created Windows EXE version of JmsStream.exe and JmsStreamGUI.exe</li>
+</ul>
+<p><strong>Version 2.1.1</strong></p>
+<ul>
+    <li>Fixed null pointer error when <code>-showconfig</code> is the only argument.</li>
+    <li>Added <code>-ssl_auth_only</code> to force SSL encryption only for authentication.</li>
+</ul>
+<p><strong>Version 2.1.0</strong></p>
+<ul>
+    <li>Fixed ZIP file operations. Can now read/write JmsStream capture file from/to a ZIP file.</li>
+    <li>Added <code>-zipmsgperentry &lt;number&gt;</code> for large message captures. It breaks up a certain number (<code>&lt;number&gt;</code>) of messages into separate ZIP entries. Good for very large message captures.</li>
+    <li>Changed <code>-send &lt;file-name&gt;</code> to <code>-send &lt;destination&gt;</code> to allow overriding of the message destination. Must now use <code>-file &lt;file-name&gt;</code> argument when sending messages.</li>
+    <li>Changed <code>-requestreply &lt;file-name&gt;</code> to <code>-requestreply &lt;destination&gt;</code> to allow overriding of the message destination. Must now use <code>-file &lt;file-name&gt;</code> argument when using
+        request/reply messages.
+    </li>
+</ul>
+<p><strong>Version 2.0.1</strong></p>
+<ul>
+    <li>Fixed null pointer error when sending messages.</li>
+    <li>Fixed missing XML classes in JAR file.</li>
+    <li>Added <code>-getbodylength</code> arg to determine the body length when the user changes the message body.</li>
+    <li>Added <code>-sequence &lt;property&gt; </code>arg to include the message sequence number in a message property</li>
+    <li>Corrected spelling errors.</li>
+    <li>Slight License change.</li>
+    <li>Enhanced documentation.</li>
+</ul>
+<p><strong>Version 2.0.0</strong></p>
+<ul>
+    <li>Fixed bug that caused the binary message capture to have the incorrect length.</li>
+    <li>Fixed bug that prevented anonymous login.</li>
+    <li>Fixed bug in the publishing of integer message properties.</li>
+    <li>Added ability to use SSL for JNDI lookups.</li>
+    <li>Added ability to connect to generic message factories.</li>
+    <li>Added ability to have fractional message rates. i.e. -rate 0.5</li>
+    <li>Added ability to publish messages at linearly increasing rate intervals.</li>
+    <li>Added ability to put message publication rate in message property.</li>
+    <li>Added ability to subscribe using AUTO_ACKNOWLEDGE, CLIENT_ACKNOWLEDGE, DUPS_OK_ACKNOWLEDGE, EXPLICIT_CLIENT_ACKNOWLEDGE, and NO_ACKNOWLEDGE.</li>
+    <li>Added ability to override message deliver mode.</li>
+    <li>Added usage license.</li>
+    <li>When publishing messages, JmsStream now loads the entire message file into memory to increase performance.</li>
+    <li>Removed ZIP file support because of bugs. Will reintroduce it later if needed.</li>
+    <li>Internal performance improvements.</li>
+    <li>JBoss JMS Support.</li>
+    <li>Revised command line options.</li>
+    <li>JmsStream.jar now includes the TIBCO EMS client libraries.</li>
+</ul>
+<p><strong>Version 1.2.2</strong></p>
+<ul>
+    <li>Fixed bug in MapMessage publication.</li>
+    <li>Revised command line options.</li>
+</ul>
+<p><strong>Version 1.2.0</strong></p>
+<ul>
+    <li>Added saving and replying from a text file instead of the XML format.</li>
+    <li>This increased publishing performance and allows large Text Type message to be replayed.</li>
+    <li>Fixed request/reply bugs.</li>
+</ul>
+<p><strong>Version 1.1.2</strong></p>
+<ul>
+    <li>Fixed file write problem.</li>
+</ul>
+<p><strong>Version 1.1.1</strong></p>
+<ul>
+    <li>Fixed program termination for publications.</li>
+    <li>Added receiveTime to XML File.</li>
+</ul>
+<p><strong>Version 1.1.0</strong></p>
+<ul>
+    <li>Added request/reply.</li>
+    <li>Added CSV output for message headers.</li>
+    <li>Updated Readme.txt file.</li>
+    <li>Added examples.</li>
+    <li>Add timestamp properties for performance testing.</li>
+    <li>Must now use Java 1.4 or higher.</li>
+    <li>Added the EMS Jar files to JmsStream_App.zip for people who don't want to install EMS on their computers.</li>
+</ul>
+<p><strong>Version 1.0.3</strong></p>
+<ul>
+    <li>Fixed agrs bug. JmsStream will now except arguments.</li>
+</ul>
+<p><strong>Version 1.0.2</strong></p>
+<ul>
+    <li>Fixed custom connection factory and SSL bug</li>
+</ul>
+<p><strong>Version 1.0.1</strong></p>
+<ul>
+    <li>Improved features and bug fixed to JmsStream version 0.3.2.</li>
+</ul>
+<h2>
+<p>&nbsp;</p>
+
+<h2>JmsStreamGUI Change Log</h2>
+
+<p><strong>Version 2.7.9</strong></p>
+<ul>
+    <li>Fixed minor issue with the stats GUI configuration.</li>
+    <li>Compiled with JDK 1.8_40</li>
+</ul>
+
+<p><strong>Version 2.7.8.1</strong></p>
+<ul>
+    <li>No functional change.  Compiled with JDK 1.6_45</li>
+</ul>
+
+<p><strong>Version 2.7.8</strong></p>
+<ul>
+    <li>Made SSL JNDI lookup the default when the SSL connections box is checked.  This can be changed to TCP lookups unchecking "Use SSL for JNDI Lookup".</li>
+</ul>
+<p><strong>Version 2.7.7</strong></p>
+<ul>
+    <li>Added separate SSL parameters for JNDI and JMS connections.</li>
+</ul>
+<p><strong>Version 2.7.6</strong></p>
+<ul>
+    <li>Fixed a form error when editing a configuration that uses SSL.</li>
+</ul>
+<p><strong>Version 2.7.4</strong></p>
+<ul>
+    <li>Fixed issue with displaying appropriate ZIP file buttons.</li>
+</ul>
+<p><strong>Version 2.7.2</strong></p>
+<ul>
+    <li>Fixed an issue with "Stop After" spinner box.</li>
+</ul>
+<p><strong>Version 2.7.0</strong></p>
+<ul>
+    <li>Added extract TIBCO EMS system monitor message parameter for EMS topics.</li>
+    <li>Fixed an issue that prevented the SSL and Transaction tabs from enabling when loading from a configuration file.</li>
+    <li>In the JmsStream configuration screen, fixed the the "Test Connection" for default XA connection factories.</li>
+</ul>
+<p><strong>Version 2.6.3</strong></p>
+<ul>
+    <li>Added a JMS connection tester in the GUI.</li>
+</ul>
+<p><strong>Version 2.6.2</strong></p>
+<ul>
+    <li>Fixed bugs in Message Editor.</li>
+    <li>Fixed request/response bug in Configuration Editor.</li>
+</ul>
+<p><strong>Version 2.6.1</strong></p>
+<ul>
+    <li>Updated EMS libraries to EMS 6.0.</li>
+</ul>
+<p><strong>Version 2.6.0</strong></p>
+<ul>
+    <li>Added the ability to create and use a local file based JNDI.</li>
+    <li>Added built-in support for Apache ActiveMQ 5.</li>
+    <li>Added built-in support for JBoss HornetQ 2.</li>
+    <li>Fixed issue with "Display Command Line Arguments" and displaying -stopafter argument.</li>
+    <li>Fixed issue with "Display Command Line Arguments" and displaying incompatible arguments.</li>
+</ul>
+<p><strong>Version 2.5.2</strong></p>
+<ul>
+    <li>Fixed issue preventing request/reply messages in JmsStreamGUI. This issue did not effect command line version.</li>
+</ul>
+<p><strong>Version 2.5.1</strong></p>
+<ul>
+    <li>Fixed display of UTF-8 characters.</li>
+</ul>
+<p><strong>Version 2.5.0</strong></p>
+<ul>
+    <li>Compiled with JDK 1.6 but still compatible with JRE 1.5.</li>
+    <li>Added a JMS message editor to JmsStreamGUI.</li>
+    <li>Added a screen to add custom JNDI settings.</li>
+    <li>Changed SSL screen to allow SSL connects to third-party JMS Servers.</li>
+    <li>Fixed the request/reply bug in JmsStream GUI that prevented receiving the reply.</li>
+    <li>Fixed a bug that prevented stopping of publication.</li>
+</ul>
+<p><strong>Version 2.4.2</strong></p>
+<ul>
+    <li>Changed some fields and labels for better ergonomics.</li>
+    <li>Corrected spelling errors in the documentation and JmsStreamGUI code.</li>
+</ul>
+<p><strong>Version 2.4.1</strong></p>
+<ul>
+    <li>Add a feature to the listener that will exit the application after receiving x number of messages.</li>
+    <li>Removed JBoss Transaction Manager 4.3.2 SP7 libraries due to possible legal issues. (You must now copy the libraries yourself. See docs.)</li>
+    <li>Removed embedded JARs from inside the EXE. Now the JARs are in the &quot;./lib&quot; directory.</li>
+</ul>
+<p><strong>Version 2.4.0</strong></p>
+<ul>
+    <li>Added transaction tab in GUI.</li>
+    <li>JmsStreamGUI.exe has all necessary JARs embedded inside the EXE.</li>
+</ul>
+<p><strong>Version 2.3.0</strong></p>
+<ul>
+    <li>Moved to version number 2.3.0 to keep in line with the JmsStream command line version.</li>
+    <li>Compiled with JDK 1.5 and no longer compatible with JVM 1.4.</li>
+</ul>
+<p><strong>Version 1.1.0</strong></p>
+<ul>
+    <li>Fixed configuration not setting the message selector.</li>
+    <li>Added asynchronous screen updates to increase message performance.</li>
+    <li>Added ability to pause output screen updates.</li>
+</ul>
+<p><strong>Version 1.0.0</strong></p>
+<ul>
+    <li>Improved usability</li>
+</ul>
+<p>&nbsp;</p>
+<hr>
+<address><a href="mailto:abailey@tibco.com">abailey@tibco.com</a></address>
+<!-- Created: 4 May 2006 -->
+<!-- hhmts start -->
+Last modified:
+08 February 2013
+<!-- hhmts end -->
+</body>
+</html>

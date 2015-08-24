@@ -1,0 +1,3047 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="PerformanceTestingJmsStream_files/filelist.xml">
+<link rel=Edit-Time-Data href="PerformanceTestingJmsStream_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Performance Testing With JmsStream</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>A. Kevin Bailey</o:Author>
+  <o:LastAuthor>A. Kevin Bailey</o:LastAuthor>
+  <o:Revision>40</o:Revision>
+  <o:TotalTime>4740</o:TotalTime>
+  <o:LastPrinted>2006-05-30T13:02:00Z</o:LastPrinted>
+  <o:Created>2006-05-03T21:51:00Z</o:Created>
+  <o:LastSaved>2010-02-04T15:43:00Z</o:LastSaved>
+  <o:Pages>13</o:Pages>
+  <o:Words>2349</o:Words>
+  <o:Characters>13393</o:Characters>
+  <o:Company>TIBCO Software Inc.</o:Company>
+  <o:Lines>111</o:Lines>
+  <o:Paragraphs>31</o:Paragraphs>
+  <o:CharactersWithSpaces>15711</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=dataStoreItem href="PerformanceTestingJmsStream_files/item0030.xml"
+target="PerformanceTestingJmsStream_files/props0031.xml">
+<link rel=themeData href="PerformanceTestingJmsStream_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="PerformanceTestingJmsStream_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>110</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="267">
+  <w:LsdException Locked="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="99" Name="No List"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611985 1107304683 0 0 159 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-134238209 -371195905 63 0 4129279 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520082689 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-134238209 -371195905 63 0 4129279 0;}
+@font-face
+	{font-family:"Arial Bold";
+	panose-1:2 11 7 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Avenir-Light;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+h1
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	border:none;
+	mso-border-alt:dashed windowtext .5pt;
+	padding:0in;
+	mso-padding-alt:6.0pt 4.0pt 6.0pt 6.0pt;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:0pt;
+	font-weight:bold;
+	mso-no-proof:yes;}
+h2
+	{mso-style-update:auto;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+h3
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Normal;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:10.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 4 Char";
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.6in;
+	text-indent:-.6in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	mso-list:l3 level4 lfo1;
+	tab-stops:list .6in;
+	font-size:10.0pt;
+	mso-bidi-font-size:146.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h5
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 5 Char";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.7in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	mso-list:l3 level5 lfo1;
+	tab-stops:list .7in;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:8.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+h6
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 6 Char";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.8in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	mso-list:l3 level6 lfo1;
+	tab-stops:list .8in;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:9.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 7 Char";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.9in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	mso-list:l3 level7 lfo1;
+	tab-stops:list .9in;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 7";
+	mso-style-link:"Heading 8 Char";
+	mso-style-next:"Body Text";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:8;
+	mso-list:l3 level8 lfo1;
+	tab-stops:list 1.0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 8";
+	mso-style-link:"Heading 9 Char";
+	mso-style-next:"Body Text";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:9;
+	mso-list:l3 level9 lfo1;
+	tab-stops:list 1.1in;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	tab-stops:40.3pt right dotted 6.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	font-weight:bold;
+	mso-no-proof:yes;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:1.0pt;
+	margin-right:0in;
+	margin-bottom:1.0pt;
+	margin-left:40.3pt;
+	text-indent:4.7pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.75in right dotted 6.0in;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	mso-no-proof:yes;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:76.3pt;
+	margin-bottom:.0001pt;
+	text-indent:-30.95pt;
+	mso-pagination:widow-orphan;
+	tab-stops:right dotted 6.0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	mso-no-proof:yes;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:9.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:right dotted 6.0in;
+	font-size:9.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;
+	mso-no-proof:yes;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:48.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Trebuchet MS","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Trebuchet MS","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Trebuchet MS","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:84.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Trebuchet MS","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:96.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Trebuchet MS","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-link:"Footnote Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-link:"Comment Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Trebuchet MS","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-unhide:no;
+	mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-unhide:no;
+	mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	mso-bidi-font-weight:bold;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:20.15pt;
+	text-indent:-20.15pt;
+	mso-pagination:widow-orphan;
+	tab-stops:right dotted 6.0in;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	mso-no-proof:yes;}
+span.MsoFootnoteReference
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	vertical-align:super;}
+span.MsoCommentReference
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;}
+span.MsoPageNumber
+	{mso-style-unhide:no;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:27.0pt;
+	text-indent:-9.0pt;
+	line-height:125%;
+	mso-pagination:widow-orphan;
+	mso-list:l10 level1 lfo2;
+	tab-stops:list .25in;
+	font-size:9.0pt;
+	mso-bidi-font-size:4.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.45in;
+	text-indent:-.2in;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo3;
+	tab-stops:list .25in;
+	font-size:9.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{mso-style-unhide:no;
+	mso-style-parent:"List Bullet";
+	margin-top:0in;
+	margin-right:.75in;
+	margin-bottom:6.0pt;
+	margin-left:63.0pt;
+	text-indent:-9.0pt;
+	line-height:125%;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo4;
+	tab-stops:list .5in;
+	font-size:11.0pt;
+	mso-bidi-font-size:4.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:.5in;
+	margin-left:117.35pt;
+	mso-pagination:widow-orphan;
+	font-size:24.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;
+	mso-font-kerning:14.0pt;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-unhide:no;
+	mso-style-link:"Body Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	line-height:125%;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:8.5pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Subtitle Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:120%;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:8.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{mso-style-unhide:no;
+	mso-style-link:"Date Char";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{mso-style-unhide:no;
+	mso-style-link:"Body Text 2 Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:7.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:#F2EAD8;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{mso-style-unhide:no;
+	mso-style-link:"Body Text 3 Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:5.0pt;
+	font-family:"Avenir-Light","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+a:link, span.MsoHyperlink
+	{mso-style-unhide:no;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-unhide:no;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Arial Unicode MS","sans-serif";
+	color:black;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-parent:"Comment Text";
+	mso-style-link:"Comment Subject Char";
+	mso-style-next:"Comment Text";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Trebuchet MS","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{mso-style-priority:39;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 1";
+	margin-top:0in;
+	margin-right:102.95pt;
+	margin-bottom:6.0pt;
+	margin-left:-.25in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l9 level1 lfo5;
+	tab-stops:list 1.0in;
+	border:none;
+	mso-border-top-alt:dash-small-gap black .5pt;
+	mso-border-bottom-alt:solid #00408A 3.0pt;
+	padding:0in;
+	mso-padding-alt:6.0pt 0in 4.0pt 0in;
+	font-size:16.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Helvetica","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#00408A;
+	font-weight:bold;
+	mso-no-proof:yes;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 4";
+	mso-bidi-font-size:146.0pt;
+	font-family:"Arial","sans-serif";
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 5";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.Heading6Char
+	{mso-style-name:"Heading 6 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 6";
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.Heading7Char
+	{mso-style-name:"Heading 7 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 7";
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	font-weight:bold;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Body Text";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;}
+span.Heading8Char
+	{mso-style-name:"Heading 8 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 8";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.Heading9Char
+	{mso-style-name:"Heading 9 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 9";
+	mso-ansi-font-size:9.0pt;}
+span.FootnoteTextChar
+	{mso-style-name:"Footnote Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Footnote Text";}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Comment Text";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Header;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Footer;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Title;
+	mso-ansi-font-size:26.0pt;
+	mso-bidi-font-size:26.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#17365D;
+	mso-themecolor:text2;
+	mso-themeshade:191;
+	letter-spacing:.25pt;
+	mso-font-kerning:14.0pt;}
+span.SubtitleChar
+	{mso-style-name:"Subtitle Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Subtitle;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	letter-spacing:.75pt;
+	font-style:italic;}
+span.DateChar
+	{mso-style-name:"Date Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Date;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;}
+span.BodyText2Char
+	{mso-style-name:"Body Text 2 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Body Text 2";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;}
+span.BodyText3Char
+	{mso-style-name:"Body Text 3 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Body Text 3";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"Comment Text Char";
+	mso-style-link:"Comment Subject";
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+p.Abstract, li.Abstract, div.Abstract
+	{mso-style-name:Abstract;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:117.0pt;
+	line-height:125%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.Heading1Numbered, li.Heading1Numbered, div.Heading1Numbered
+	{mso-style-name:"Heading 1 Numbered";
+	mso-style-unhide:no;
+	mso-style-parent:"Heading 1";
+	mso-style-next:"Body Text";
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:26.1pt;
+	text-indent:-.3in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l8 level1 lfo6;
+	tab-stops:list 26.1pt;
+	border:none;
+	mso-border-alt:dashed windowtext .5pt;
+	padding:0in;
+	mso-padding-alt:6.0pt 4.0pt 6.0pt 6.0pt;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-no-proof:yes;}
+p.Heading2Numbered, li.Heading2Numbered, div.Heading2Numbered
+	{mso-style-name:"Heading 2 Numbered";
+	mso-style-unhide:no;
+	mso-style-parent:"Heading 2";
+	mso-style-next:"Body Text";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	mso-list:l8 level2 lfo6;
+	tab-stops:list .5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.Heading3Numbered, li.Heading3Numbered, div.Heading3Numbered
+	{mso-style-name:"Heading 3 Numbered";
+	mso-style-unhide:no;
+	mso-style-parent:"Heading 3";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:40.5pt;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	mso-list:l8 level3 lfo6;
+	tab-stops:list 40.5pt;
+	font-size:10.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Heading4Numbered, li.Heading4Numbered, div.Heading4Numbered
+	{mso-style-name:"Heading 4 Numbered";
+	mso-style-unhide:no;
+	mso-style-parent:"Heading 4";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:47.7pt;
+	text-indent:-.6in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	mso-list:l8 level4 lfo6;
+	tab-stops:list 47.7pt;
+	font-size:10.0pt;
+	mso-bidi-font-size:146.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.SidebarText, li.SidebarText, div.SidebarText
+	{mso-style-name:"Sidebar Text";
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:15.0pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:9.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:#871138;
+	letter-spacing:.5pt;
+	mso-bidi-font-weight:bold;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Heaeding3, li.Heaeding3, div.Heaeding3
+	{mso-style-name:"Heaeding 3";
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.FigureCaption, li.FigureCaption, div.FigureCaption
+	{mso-style-name:"Figure Caption";
+	mso-style-unhide:no;
+	mso-style-next:"Body Text";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:2.0in;
+	text-indent:-.75in;
+	line-height:11.0pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo7;
+	tab-stops:list 2.0in;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.TableHeading, li.TableHeading, div.TableHeading
+	{mso-style-name:"Table Heading";
+	mso-style-unhide:no;
+	mso-style-parent:"Body Text";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:27.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.TableText, li.TableText, div.TableText
+	{mso-style-name:"Table Text";
+	mso-style-unhide:no;
+	mso-style-parent:"Body Text";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:27.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:2.0in;
+	text-indent:-.75in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-list:l2 level1 lfo8;
+	tab-stops:list 2.0in;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	mso-no-proof:yes;}
+p.Equation, li.Equation, div.Equation
+	{mso-style-name:Equation;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:10.0pt;
+	mso-pagination:none;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.fineprnt, li.fineprnt, div.fineprnt
+	{mso-style-name:fineprnt;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Arial Unicode MS";
+	color:windowtext;}
+p.BigLetter, li.BigLetter, div.BigLetter
+	{mso-style-name:BigLetter;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:146.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:#7C0F5C;
+	font-weight:bold;}
+p.TIBPicture, li.TIBPicture, div.TIBPicture
+	{mso-style-name:TIBPicture;
+	mso-style-unhide:no;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.ChangeLog, li.ChangeLog, div.ChangeLog
+	{mso-style-name:ChangeLog;
+	mso-style-unhide:no;
+	mso-style-parent:"Body Text";
+	margin-top:0in;
+	margin-right:.25in;
+	margin-bottom:9.0pt;
+	margin-left:27.0pt;
+	line-height:125%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	mso-bidi-font-size:8.5pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.ChangeLogTitle, li.ChangeLogTitle, div.ChangeLogTitle
+	{mso-style-name:ChangeLogTitle;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;
+	font-weight:bold;}
+p.Copyright, li.Copyright, div.Copyright
+	{mso-style-name:Copyright;
+	mso-style-unhide:no;
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p.appendix, li.appendix, div.appendix
+	{mso-style-name:appendix;
+	mso-style-unhide:no;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-9.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l7 level2 lfo9;
+	tab-stops:list 117.0pt 2.0in;
+	border:none;
+	mso-border-alt:dashed windowtext .5pt;
+	padding:0in;
+	mso-padding-alt:6.0pt 4.0pt 6.0pt 6.0pt;
+	font-size:16.0pt;
+	font-family:"Arial Bold","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.appendixlevel2, li.appendixlevel2, div.appendixlevel2
+	{mso-style-name:"appendix level 2";
+	mso-style-unhide:no;
+	mso-style-parent:"Heading 2";
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.appendixlevel3, li.appendixlevel3, div.appendixlevel3
+	{mso-style-name:"appendix level 3";
+	mso-style-unhide:no;
+	mso-style-parent:"Heading 3";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:27.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	tab-stops:63.0pt;
+	font-size:11.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("PerformanceTestingJmsStream_files/header.htm") fs;
+	mso-footnote-continuation-separator:url("PerformanceTestingJmsStream_files/header.htm") fcs;
+	mso-endnote-separator:url("PerformanceTestingJmsStream_files/header.htm") es;
+	mso-endnote-continuation-separator:url("PerformanceTestingJmsStream_files/header.htm") ecs;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.2in .5in 1.0in 91.45pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-title-page:yes;
+	mso-header:url("PerformanceTestingJmsStream_files/header.htm") h1;
+	mso-footer:url("PerformanceTestingJmsStream_files/header.htm") f1;
+	mso-first-header:url("PerformanceTestingJmsStream_files/header.htm") fh1;
+	mso-first-footer:url("PerformanceTestingJmsStream_files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-1664689900;}
+@list l0:level1
+	{mso-level-style-link:"List Number";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:92824132;
+	mso-list-type:simple;
+	mso-list-template-ids:1934948794;}
+@list l1:level1
+	{mso-level-style-link:"Figure Caption";
+	mso-level-text:"Figure %1\.";
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:2.0in;
+	text-indent:-.75in;
+	mso-ansi-font-size:9.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l2
+	{mso-list-id:275605832;
+	mso-list-type:simple;
+	mso-list-template-ids:-905045026;}
+@list l2:level1
+	{mso-level-style-link:"Table Caption";
+	mso-level-text:"Table %1\.";
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:2.0in;
+	text-indent:-.75in;
+	mso-ansi-font-size:9.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l3
+	{mso-list-id:452017710;
+	mso-list-template-ids:-478522284;}
+@list l3:level1
+	{mso-level-text:%1;
+	mso-level-tab-stop:.3in;
+	mso-level-number-position:left;
+	margin-left:.3in;
+	text-indent:-.3in;}
+@list l3:level2
+	{mso-level-text:"%1\.%2";
+	mso-level-tab-stop:.4in;
+	mso-level-number-position:left;
+	margin-left:.4in;
+	text-indent:-.4in;}
+@list l3:level3
+	{mso-level-text:"%1\.%2\.%3";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:.5in;
+	text-indent:-.5in;}
+@list l3:level4
+	{mso-level-style-link:"Heading 4";
+	mso-level-text:"%1\.%2\.%3\.%4";
+	mso-level-tab-stop:.6in;
+	mso-level-number-position:left;
+	margin-left:.6in;
+	text-indent:-.6in;}
+@list l3:level5
+	{mso-level-style-link:"Heading 5";
+	mso-level-text:"%1\.%2\.%3\.%4\.%5";
+	mso-level-tab-stop:.7in;
+	mso-level-number-position:left;
+	margin-left:.7in;
+	text-indent:-.7in;}
+@list l3:level6
+	{mso-level-style-link:"Heading 6";
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6";
+	mso-level-tab-stop:.8in;
+	mso-level-number-position:left;
+	margin-left:.8in;
+	text-indent:-.8in;}
+@list l3:level7
+	{mso-level-style-link:"Heading 7";
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7";
+	mso-level-tab-stop:.9in;
+	mso-level-number-position:left;
+	margin-left:.9in;
+	text-indent:-.9in;}
+@list l3:level8
+	{mso-level-style-link:"Heading 8";
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8";
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-1.0in;}
+@list l3:level9
+	{mso-level-style-link:"Heading 9";
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9";
+	mso-level-tab-stop:1.1in;
+	mso-level-number-position:left;
+	margin-left:1.1in;
+	text-indent:-1.1in;}
+@list l4
+	{mso-list-id:537668600;
+	mso-list-type:hybrid;
+	mso-list-template-ids:67542528 214714630 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"List Bullet 2";
+	mso-level-text:-;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+@list l4:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:899900757;
+	mso-list-template-ids:1789406946;
+	mso-list-name:FigCap22;}
+@list l5:level1
+	{mso-level-suffix:none;
+	mso-level-text:"Chapter %1\:";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-1.5in;
+	mso-ansi-font-size:18.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l5:level2
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l5:level3
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l5:level4
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l5:level5
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l5:level6
+	{mso-level-number-format:none;
+	mso-level-text:" ";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l5:level7
+	{mso-level-number-format:none;
+	mso-level-text:" ";
+	mso-level-tab-stop:0in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l5:level8
+	{mso-level-suffix:space;
+	mso-level-text:"Figure 1-%8\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;
+	mso-ansi-font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l5:level9
+	{mso-level-number-format:none;
+	mso-level-suffix:space;
+	mso-level-text:"Caution\:";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:135.35pt;
+	text-indent:0in;
+	mso-ansi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l6
+	{mso-list-id:922030614;
+	mso-list-template-ids:-621671604;
+	mso-list-name:FigCap2;}
+@list l6:level1
+	{mso-level-suffix:none;
+	mso-level-text:"Chapter %1\: ";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;
+	mso-ansi-font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l6:level2
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l6:level3
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l6:level4
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l6:level5
+	{mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l6:level6
+	{mso-level-number-format:none;
+	mso-level-text:" ";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l6:level7
+	{mso-level-number-format:none;
+	mso-level-text:" ";
+	mso-level-tab-stop:0in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l6:level8
+	{mso-level-suffix:space;
+	mso-level-text:"Figure 1-%8\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;
+	mso-ansi-font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l6:level9
+	{mso-level-number-format:none;
+	mso-level-suffix:space;
+	mso-level-text:"Caution\:";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:135.35pt;
+	text-indent:0in;
+	mso-ansi-font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l7
+	{mso-list-id:1413890505;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-301061130 67698703 16438164 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l7:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l7:level2
+	{mso-level-number-format:alpha-upper;
+	mso-level-style-link:appendix;
+	mso-level-text:"APPENDIX %2\.";
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l7:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l8
+	{mso-list-id:2107385671;
+	mso-list-template-ids:-2054900518;}
+@list l8:level1
+	{mso-level-style-link:"Heading 1 Numbered";
+	mso-level-text:%1;
+	mso-level-tab-stop:26.1pt;
+	mso-level-number-position:left;
+	margin-left:26.1pt;
+	text-indent:-.3in;}
+@list l8:level2
+	{mso-level-style-link:"Heading 2 Numbered";
+	mso-level-text:"%1\.%2";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:.5in;
+	text-indent:-.5in;}
+@list l8:level3
+	{mso-level-style-link:"Heading 3 Numbered";
+	mso-level-text:"%1\.%2\.%3";
+	mso-level-tab-stop:40.5pt;
+	mso-level-number-position:left;
+	margin-left:40.5pt;
+	text-indent:-.5in;}
+@list l8:level4
+	{mso-level-style-link:"Heading 4 Numbered";
+	mso-level-text:"%1\.%2\.%3\.%4";
+	mso-level-tab-stop:47.7pt;
+	mso-level-number-position:left;
+	margin-left:47.7pt;
+	text-indent:-.6in;}
+@list l8:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5";
+	mso-level-tab-stop:54.9pt;
+	mso-level-number-position:left;
+	margin-left:54.9pt;
+	text-indent:-.7in;}
+@list l8:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6";
+	mso-level-tab-stop:62.1pt;
+	mso-level-number-position:left;
+	margin-left:62.1pt;
+	text-indent:-.8in;}
+@list l8:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7";
+	mso-level-tab-stop:69.3pt;
+	mso-level-number-position:left;
+	margin-left:69.3pt;
+	text-indent:-.9in;}
+@list l8:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8";
+	mso-level-tab-stop:76.5pt;
+	mso-level-number-position:left;
+	margin-left:76.5pt;
+	text-indent:-1.0in;}
+@list l8:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9";
+	mso-level-tab-stop:83.7pt;
+	mso-level-number-position:left;
+	margin-left:83.7pt;
+	text-indent:-1.1in;}
+@list l9
+	{mso-list-id:2127769646;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-8743668 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l9:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10
+	{mso-list-id:2137095824;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2058445512 363112008 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"List Bullet";
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l10:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="35842">
+  <o:colormru v:ext="edit" colors="#a84300,#b28800,#a74300,#ce0000,#ba0000,#ba4300,#a80f16,#065591"/>
+  <o:colormenu v:ext="edit" fillcolor="#a74300" strokecolor="none"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=Abstract><o:p>&nbsp;</o:p></p>
+
+<p class=MsoTitle>Performance Testing With JmsStream</p>
+
+<p class=Abstract>This document describes how use JmsStream and MS Excel to
+determine the message throughput performance of a process or system.<span
+style='mso-spacerun:yes'>  </span>This type of performance testing only works with
+processes that accept a JMS message as the process starter (initiator), and
+produce a JMS message as a final output.<span style='mso-spacerun:yes'> 
+</span>Also, the process must pass a timestamp or correlation ID from the
+starter message to the final message.<span style='mso-bidi-font-size:10.0pt;
+line-height:125%'><o:p></o:p></span></p>
+
+<p class=Abstract>This document assumes the reader is familiar with JMS and MS
+Excel.</p>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid windowtext 1.5pt;
+padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid windowtext 1.5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><a name="_Toc20904602"><b><span
+style='font-size:16.0pt;mso-bidi-font-size:12.0pt;font-family:"Arial","sans-serif"'>Table
+of Contents</span></b></a><b><span style='font-size:16.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Arial","sans-serif"'><o:p></o:p></span></b></p>
+
+</div>
+
+<p class=MsoToc1><!--[if supportFields]><span style='font-weight:normal'><span
+style='mso-element:field-begin'></span><span
+style='mso-spacerun:yes'> </span>TOC \o &quot;1-4&quot; \h \z <span
+style='mso-element:field-separator'></span></span><![endif]--><span
+class=MsoHyperlink><a href="#_Toc135198514">1<span style='mso-bidi-font-size:
+12.0pt;font-family:"Times New Roman","serif";color:windowtext;font-weight:normal;
+text-decoration:none;text-underline:none'><span style='mso-tab-count:1'>    </span></span>Introduction<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198514 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500310034000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:normal'><o:p></o:p></span></p>
+
+<p class=MsoToc2 style='tab-stops:.75in 76.3pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198515">1.1<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>      </span></span>Message
+Rate Performance<span style='color:windowtext;display:none;mso-hide:screen;
+text-decoration:none;text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198515 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500310035000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc2 style='tab-stops:.75in 76.3pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198516">1.2<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>      </span></span>Microsoft
+Excel<span style='color:windowtext;display:none;mso-hide:screen;text-decoration:
+none;text-underline:none'><span style='mso-tab-count:1 dotted'> </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198516 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500310036000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc135198517">2<span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+color:windowtext;font-weight:normal;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>    </span></span>How to Gather the Data<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198517 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500310037000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:normal'><o:p></o:p></span></p>
+
+<p class=MsoToc2 style='tab-stops:.75in 76.3pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198518">2.1<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>      </span></span>Capture
+the Input Messages using JmsStream<span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198518 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500310038000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc2 style='tab-stops:.75in 76.3pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198519">2.2<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>      </span></span>Playing
+the Input Messages and Capture the Output Messages<span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF _Toc135198519
+\h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>4<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500310039000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc3 style='tab-stops:84.0pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198520">2.2.1<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>   </span></span>Starting a
+Test<span style='color:windowtext;display:none;mso-hide:screen;text-decoration:
+none;text-underline:none'><span style='mso-tab-count:1 dotted'> </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198520 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>4<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500320030000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc135198521">3<span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+color:windowtext;font-weight:normal;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>    </span></span>How to Analyze the Data<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198521 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500320031000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:normal'><o:p></o:p></span></p>
+
+<p class=MsoToc2 style='tab-stops:.75in 76.3pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198522">3.1<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>      </span></span>JmsStream
+CSV File<span style='color:windowtext;display:none;mso-hide:screen;text-decoration:
+none;text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198522 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500320032000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc2 style='tab-stops:.75in 76.3pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198523">3.2<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>      </span></span>Importing
+CSV File into an Excel Workbook<span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198523 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500320033000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc3 style='tab-stops:84.0pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198524">3.2.1<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>   </span></span>Importing
+the Data<span style='color:windowtext;display:none;mso-hide:screen;text-decoration:
+none;text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198524 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500320034000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc3 style='tab-stops:84.0pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198525">3.2.2<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>   </span></span>Calculating
+Latency<span style='color:windowtext;display:none;mso-hide:screen;text-decoration:
+none;text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198525 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>8<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500320035000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoToc3 style='tab-stops:84.0pt right dotted 6.0in'><span
+class=MsoHyperlink><a href="#_Toc135198526">3.2.3<span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>   </span></span>Creating a
+Chart<span style='color:windowtext;display:none;mso-hide:screen;text-decoration:
+none;text-underline:none'><span style='mso-tab-count:1 dotted'> </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span> PAGEREF
+_Toc135198526 \h <span style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>9<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003100330035003100390038003500320036000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><o:p></o:p></span></p>
+
+<p class=MsoBodyText><!--[if supportFields]><b><span style='font-size:12.0pt;
+mso-bidi-font-size:16.0pt;line-height:125%;mso-bidi-font-family:"Times New Roman";
+mso-no-proof:yes'><span style='mso-element:field-end'></span></span></b><![endif]--><o:p>&nbsp;</o:p></p>
+
+<b><span style='font-size:16.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";color:black;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA;
+mso-no-proof:yes'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.0pt;
+mso-border-alt:solid windowtext .5pt;padding:6.0pt 4.0pt 6.0pt 6.0pt'>
+
+<p class=Heading1Numbered style='margin-left:27.35pt;text-indent:-27.35pt;
+border:none;mso-border-alt:solid windowtext .5pt;padding:0in;mso-padding-alt:
+6.0pt 4.0pt 6.0pt 6.0pt'><a name="_Toc135198514"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Introduction</a></p>
+
+</div>
+
+<p class=Heading2Numbered style='tab-stops:.5in'><a name="_Toc135198515"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Message Rate Performance</a></p>
+
+<p class=MsoBodyText>The purpose of the performance test is to determine the
+maximum sustained message processing rate of a process or system.<span
+style='mso-spacerun:yes'>  </span>This is done by calculating the process
+latency of the system.<span style='mso-spacerun:yes'>  </span>When determining
+the maximum throughput of a system a constant latency is irrelevant.<span
+style='mso-spacerun:yes'>  </span>The maximum performance is determined when
+the latency of the processes starts to increase.<span
+style='mso-spacerun:yes'>  </span>The increase in latency is easily seen by
+graphing the processing time superimposed on the message rate.</p>
+
+<p class=Heading2Numbered style='tab-stops:.5in'><a name="_Toc135198516"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>1.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Microsoft Excel</a></p>
+
+<p class=MsoBodyText>Microsoft Excel is used to import the coma separated value
+(CSV) file produced by JmsStream, calculate the latency of the test system, and
+display the performance chart.</p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.0pt;
+mso-border-alt:solid windowtext .5pt;padding:6.0pt 4.0pt 6.0pt 6.0pt'>
+
+<p class=Heading1Numbered style='margin-left:27.35pt;text-indent:-27.35pt;
+border:none;mso-border-alt:solid windowtext .5pt;padding:0in;mso-padding-alt:
+6.0pt 4.0pt 6.0pt 6.0pt'><a name="_Toc135198517"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>How to Gather the Data</a></p>
+
+</div>
+
+<p class=Heading2Numbered style='tab-stops:.5in'><a name="_Toc135198518"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Capture the Input Messages using JmsStream</a></p>
+
+<p class=MsoBodyText>In order to start the test, one must capture or create
+messages to start the process.<span style='mso-spacerun:yes'>  </span>It is
+recommended that the input message is captured, because it can be difficult to
+accurately create an input message.<span style='mso-spacerun:yes'>  </span>When
+capturing JMS Text Type Message it is better to save it as a text file type,
+because it is easier to modify and has better publishing performance.<span
+style='mso-spacerun:yes'>  </span>Also, JmsStream has the capability to loop
+over the publishing file in order to repeat the message publications.<span
+style='mso-spacerun:yes'>  </span>This will allow the ability to only capture a
+few messages, but have long test durations.<span style='mso-spacerun:yes'> 
+</span>The command below is an example of capturing a text type message:</p>
+
+<p class=MsoBodyText><span style='font-size:8.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>C:\TIBCO\ems\bin&gt;java –jar
+JmsStream.jar -listen queue.in -queue -providerurl tibjmsnaming://svr-esb:7222
+-user admin -password mypass –file c:\queue_in.jmss<o:p></o:p></span></p>
+
+<p class=MsoBodyText>The captured message in this case is a text type XML
+message, which is the most common message type.<span style='mso-spacerun:yes'> 
+</span>An example of the captured message is give below:</p>
+
+<p class=MsoBodyText><span style='font-size:8.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>#---------- #1 :
+ID:EMS-SERVER.1044445FBC273E:2 ----------#<o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-size:8.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>&lt;MSG_INFO&gt;<br>
+<span style='mso-spacerun:yes'>    </span>&lt;message
+type=&quot;TextMessage&quot; messageSelector=&quot;&quot;
+receiveTime=&quot;2006-05-09T03:49:22.251&quot;
+jmsServerTimestamp=&quot;2006-05-09T03:49:22.241&quot;&gt;<br>
+<span style='mso-spacerun:yes'>        </span>&lt;header
+JMSMessageID=&quot;ID:EMS-SERVER.1044445FBC273E:2&quot;
+JMSDestination=&quot;queue.in&quot; JMSReplyTo=&quot;queue.out&quot;
+JMSDeliveryMode=&quot;2&quot; JMSPriority=&quot;4&quot;
+JMSTimestamp=&quot;1147139362241&quot;/&gt;<br>
+<span style='mso-spacerun:yes'>        </span>&lt;properties&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;property
+name=&quot;ae_tracking&quot;
+type=&quot;String&quot;&gt;NGpb1mam4VSeqERMwZ-EOUEkges&lt;/property&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;property
+name=&quot;ae_pfmt&quot; type=&quot;Short&quot;&gt;10&lt;/property&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;property name=&quot;ae_tracking_info_1&quot;
+type=&quot;String&quot;&gt;IJMZ2O0g/RYuIkFunH-EObDEges&lt;/property&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;property
+name=&quot;ae_type&quot; type=&quot;Short&quot;&gt;2&lt;/property&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;property
+name=&quot;ae_ver&quot; type=&quot;Short&quot;&gt;50&lt;/property&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;property
+name=&quot;ae_encoding&quot; type=&quot;Short&quot;&gt;2&lt;/property&gt;<br>
+<span style='mso-spacerun:yes'>        </span>&lt;/properties&gt;<br>
+<span style='mso-spacerun:yes'>    </span>&lt;/message&gt;<br>
+&lt;/MSG_INFO&gt;<br>
+BodyLength=1323<br>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>
+&lt;root xmlns:ns0=&quot;http://www.tibco.com/SCHEMA/ARCH/ENVELOPE&quot;&gt;<br>
+<span style='mso-spacerun:yes'>    </span>&lt;ns0:MsgEnvelope
+xmlns:ns0=&quot;http://www.tibco.com/SCHEMA/ARCH/ENVELOPE&quot; creationDateTime=&quot;2005-11-04T18:09:10.647-05:00&quot;
+sourceApplication=&quot;ORCL&quot;
+projectName=&quot;SCN_PurchaseOrders_ORCL_P01&quot;
+processId=&quot;450000&quot;
+messageGuid=&quot;LEdAMki9/RYwRkZZEXNds9CEmAg&quot;/&gt;<br>
+<span style='mso-spacerun:yes'>    </span>&lt;PurchaseOrderType&gt;<br>
+<span style='mso-spacerun:yes'>        </span>&lt;ns0:PurchaseOrder
+xmlns:ns0=&quot;http://www.tibco.com/CDM/FIN/PO&quot;&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;ns0:POHeader
+PO_HEADER_ID=&quot;2763&quot; PURCHASE_ORDER_NUMBER=&quot;200063&quot;
+PASI_PO_NUMBER=&quot;&quot; PO_TYPE=&quot;2&quot; CURRENCY_CODE=&quot;USD&quot;
+VENDOR_NAME=&quot;TIBCO COMPANY, INC&quot; VENDOR_CODE=&quot;TBX&quot;
+VENDOR_ID=&quot;61&quot; VENDOR_SITE_CODE=&quot;TBX&quot;
+VENDOR_SITE_ID=&quot;62&quot; SHIP_TO_LOCATION_ID=&quot;141&quot;
+BILL_TO_LOCATION_ID=&quot;141&quot; PAYMENT_TERMS=&quot;20TH DAY OF 4TH
+MONTH&quot; TERMS_ID=&quot;10009&quot; OEM_FLAG=&quot;NO&quot;
+APPROVAL_STATUS=&quot;APPROVED&quot; RIVISION_NUM=&quot;0&quot;
+PO_ACTION=&quot;2&quot; ENABLED_FLAG=&quot;&quot; MERCHANT_CODE=&quot;&quot;
+REQUESTED_SHIPMENT_DAYS=&quot;20041031&quot; TRANSPORTATION_MODE=&quot;OCEAN&quot;
+PRODUCTION_SHIPMENT_MONTH=&quot;200410&quot;&gt;<br>
+<span style='mso-spacerun:yes'>                </span>&lt;ns0:POLines
+PO_LINE_ID=&quot;31723&quot; PO_HEADER_ID=&quot;2763&quot;
+PURCHASE_ORDER_NUMBER=&quot;200063&quot; LINE_NUM=&quot;1&quot;
+ITEM=&quot;410619&quot; ITEM_ID=&quot;206&quot; ITEM_DESCRIPTION=&quot;TIBCO
+AFICIO 1035&quot; UNIT_PRICE=&quot;2496.0&quot; MEASUREMENT_OF_UNIT=&quot;EA&quot;
+QUANTITY=&quot;10&quot; APPROVAL_STATUS=&quot;&quot;&gt;<br>
+<span style='mso-spacerun:yes'>                </span>&lt;/ns0:POLines&gt;<br>
+<span style='mso-spacerun:yes'>            </span>&lt;/ns0:POHeader&gt;<br>
+<span style='mso-spacerun:yes'>        </span>&lt;/ns0:PurchaseOrder&gt;<br>
+<span style='mso-spacerun:yes'>    </span>&lt;/PurchaseOrderType&gt;<br>
+&lt;/root&gt;<o:p></o:p></span></p>
+
+<p class=MsoBodyText style='margin-bottom:0in;margin-bottom:.0001pt'>The line
+of the message is the identifier and indicates the start of the message.<span
+style='mso-spacerun:yes'>  </span>It is made up of an internal message number
+and the JMS message ID.<span style='mso-spacerun:yes'>  </span>Neither of these
+values is used during playback, but the line must exist.<span
+style='mso-spacerun:yes'>  </span>The next line beginning with <span
+style='mso-bidi-font-size:9.0pt;line-height:125%;font-family:"Courier New";
+mso-bidi-font-family:Arial'>&lt;MSG_INFO&gt;</span><span style='font-size:8.0pt;
+line-height:125%;font-family:"Courier New";mso-bidi-font-family:Arial'> </span>starts
+the JmsStream message header information.<span style='mso-spacerun:yes'> 
+</span>The element <span style='mso-bidi-font-size:9.0pt;line-height:125%;
+font-family:"Courier New";mso-bidi-font-family:Arial'>&lt;message type=&quot;TextMessage&quot;/&gt;</span><span
+style='mso-bidi-font-size:9.0pt;line-height:125%'> </span>is required, but all
+other header information is optional.<span style='mso-spacerun:yes'> 
+</span>The line starting with <span style='mso-bidi-font-size:9.0pt;line-height:
+125%;font-family:"Courier New";mso-bidi-font-family:Arial'>BodyLength=</span>
+is very important.<span style='mso-spacerun:yes'>  </span>It indicates the
+length of the text message body that begins on the next line.<span
+style='mso-spacerun:yes'>  </span>If you change any information in the body you
+must change the <span style='mso-bidi-font-size:9.0pt;line-height:125%;
+font-family:"Courier New";mso-bidi-font-family:Arial'>BodyLength</span> value
+to reflect the change.<span style='mso-spacerun:yes'>  </span>A new message
+starts on a new line following the message body.</p>
+
+<p class=MsoBodyText style='margin-bottom:0in;margin-bottom:.0001pt'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoBodyText style='margin-bottom:0in;margin-bottom:.0001pt'>If there
+is any doubt of the message body length, use <span style='font-family:"Courier New"'>-getbodylength</span>
+argument to ascertain the body length.<span style='mso-spacerun:yes'> 
+</span>To use, create a file that contains only the message body.<span
+style='mso-spacerun:yes'>  </span>Then execute <span style='font-family:"Courier New"'>java
+-jar JmsStream.jar -getbodylength &lt;file-name&gt;</span>.<span
+style='mso-spacerun:yes'>  </span>With <span style='font-family:"Courier New"'>&lt;file-name&gt;</span>
+being the name of the file that contains the message body.<span
+style='mso-spacerun:yes'>  </span>The body length will be displayed on the
+screen.<span style='mso-spacerun:yes'>  </span>Copy this body length into
+message <span style='font-family:"Courier New"'>BodyLenght=</span> in the
+replay (send) file.</p>
+
+<p class=Heading2Numbered style='tab-stops:.5in'><a name="_Toc135198519"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Playing the Input Messages and Capture the
+Output Messages</a></p>
+
+<p class=Heading3Numbered style='margin-left:63.0pt'><a name="_Toc135198520"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>2.2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Starting
+a Test</a></p>
+
+<p class=MsoBodyText>JmsStream can add three properties to the JMS messages
+when it is published.<span style='mso-spacerun:yes'>  </span>The fist property
+is the sending timestamp, and it must be passed from the starter message
+(published from JmsStream) to the final output message (published to
+JmsStream).<span style='mso-spacerun:yes'>  </span>The second is the messages
+sequence number and the third is the sending message rate.<span
+style='mso-spacerun:yes'>  </span>Ideally all three properties are passed to
+the final output message of the system, but the process or system to be tested
+must pass the timestamp for the performance test to work.<span
+style='mso-spacerun:yes'>  </span>This is typically done by having JmsStream
+put a publishing timestamp in the JMSType, JMSCorrelationID, or custom property
+of the starter message and then mapping this to the JMSType, JMSCorrelationID,
+or custom property of the final outgoing message.<span
+style='mso-spacerun:yes'>  </span>JMSType is convenient, because it is a string
+property in the JMS header and it is not use by any known JMS
+implementation.<span style='mso-spacerun:yes'>  </span>JMSCorrelationID
+property can also be used.</p>
+
+<p class=MsoBodyText>After the process or system is started, start the
+JmsStream listener.<span style='mso-spacerun:yes'>  </span>Example:</p>
+
+<p class=MsoBodyText><span style='font-size:8.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>C:\TIBCO\ems\bin&gt;java -jar
+jmsstream.jar -listen queue.out -queue -providerurl tibjmsnaming://svr-esb:7222
+–user admin -password admin –csvfile c:/perftes_db_out.csv -stats 4<o:p></o:p></span></p>
+
+<p class=MsoBodyText>In this example JmsStream is listening to a queue named <span
+style='font-family:"Courier New"'>queue.out</span> and writing a CSV output
+file.<span style='mso-spacerun:yes'>  </span>It is also reporting JMS
+connection statistics on the console every 4 seconds.<span
+style='mso-spacerun:yes'>  </span>The CSV file will be described in section
+3.<span style='mso-spacerun:yes'>  </span>The stats output looks like this:</p>
+
+<p class=MsoBodyText><span style='font-size:8.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>2006-04-10T10:59:22.526: New messages
+received (within 4000ms): 22 <br>
+*** Average message rate per second: 5 *** total count at: 63<o:p></o:p></span></p>
+
+<p class=MsoBodyText>Form this output one can tell the average message rate per
+second through the connection.<span style='mso-spacerun:yes'>  </span>This is a
+rough estimate of the output performance, but it is not necessarily
+reliable.<span style='mso-spacerun:yes'>  </span>For example, if a process is
+only capable of producing 5 msg/sec and there is an input of 50 msg/sec, the
+output rate will be considerably less that 5 msg/sec due to system backup.<span
+style='mso-spacerun:yes'>  </span>However if the input message rate is 6
+msg/sec the output rate in the stats display will be fairly accurate.</p>
+
+<p class=MsoBodyText>Playing the messages from JmsStream is relatively
+easy.<span style='mso-spacerun:yes'>  </span>If using the JMSXSndTimestamp property
+to put a timestamp, make sure you put the <span style='font-family:"Courier New"'>–sndtimestamp
+JMSXSndTimestamp</span> argument in JmsStream command.<span
+style='mso-spacerun:yes'>  </span>The same applies for the <span
+style='font-family:"Courier New"'>–sequence</span> and <span style='font-family:
+"Courier New"'>–ratestamp</span> arguments.<span style='mso-spacerun:yes'> 
+</span>Example:</p>
+
+<p class=MsoBodyText><span style='font-size:8.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>C:\TIBCO\ems\bin&gt;java -jar
+jmsstream.jar -send c:/perftest_in.jmss -queue -providerurl
+tibjmsnaming://svr-esb:7222 -user admin -password admin -sndtimestamp
+JMSXSndTimestamp -sequence JMSXGroupSeq -ratestamp JMSXMsgRate -startrate 1
+-maxrate 20 -numberofintervals 20 -intervalsize 100 –noecho<o:p></o:p></span></p>
+
+<p class=MsoBodyText>This command will connect to a queue (the name of the
+queue is in the file), read the messages <span style='mso-bidi-font-size:9.0pt;
+line-height:125%'>form </span><span style='mso-bidi-font-size:9.0pt;line-height:
+125%;font-family:"Courier New"'>c:/perftest_in.jmss</span><span
+style='font-size:8.0pt;line-height:125%;font-family:"Courier New"'> </span>file,
+put a timestamp in the JMSXSndTimestamp property, put the message sequence
+number in the JMSXGroupSeq property, put the JmsStream publishing rate in the
+JMSXMsgRate property, start publishing at a rate of 1 msg/sec, and increase by
+1 msg/sec every 100 messages until the rate reaches 20 msg/sec.<span
+style='mso-spacerun:yes'>  </span>There will be a total of 2000 messages
+published in this example.<span style='mso-spacerun:yes'>  </span>If there are
+not enough messages in the file the messages are repeated.<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p class=MsoBodyText><i style='mso-bidi-font-style:normal'>Note</i>:<span
+style='mso-spacerun:yes'>  </span>Make sure there are enough published messages
+to get accurate data.<span style='mso-spacerun:yes'>  </span>Typically the
+interval size is three to five times the max rate.</p>
+
+<span style='font-size:9.0pt;mso-bidi-font-size:8.5pt;font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:EN-US;
+mso-fareast-language:EN-US;mso-bidi-language:AR-SA;mso-no-proof:yes'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.0pt;
+mso-border-alt:solid windowtext .5pt;padding:6.0pt 4.0pt 6.0pt 6.0pt'>
+
+<p class=Heading1Numbered style='margin-left:27.35pt;text-indent:-27.35pt;
+border:none;mso-border-alt:solid windowtext .5pt;padding:0in;mso-padding-alt:
+6.0pt 4.0pt 6.0pt 6.0pt'><a name="_Toc135198521"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>How to Analyze the Data</a></p>
+
+</div>
+
+<p class=Heading2Numbered style='tab-stops:.5in'><a name="_Toc135198522"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>JmsStream CSV File</a></p>
+
+<p class=MsoBodyText>The performance data is in the CSV files created by the
+JmsStream listener.<span style='mso-spacerun:yes'>  </span>The first line in
+the CSV file is the field names, and subsequent lines are the actual data.<span
+style='mso-spacerun:yes'>  </span>An example of a CSV file is given below:</p>
+
+<p class=MsoBodyText><span style='font-size:8.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>JMSMessageID,JMSDestination,JMSReplyTo,JMSCorrelationID,JMSDeliveryMode,JMSPriority,JMSType,JMSExpiration,JMSTimestamp,UserProperties---&gt;<br>
+ID:EMS-LAPTOP3.F5F445F0C4891:307,queue.out,,,2,4,,,2006-05-10T13:20:27.775,2006-05-10T13:20:15.822,1,1<br>
+ID:EMS-LAPTOP3.F5F445F0C4894:308,queue.out,,,2,4,,,2006-05-10T13:20:28.787,2006-05-10T13:20:16.824,1,1<br>
+ID:EMS-LAPTOP3.F5F445F0C4893:309,queue.out,,,2,4,,,2006-05-10T13:20:29.788,2006-05-10T13:20:17.825,1,1
+<o:p></o:p></span></p>
+
+<p class=MsoBodyText>In this example the original JmsStream send timestamp was
+mapped by the test process to the JMSXSndTimestamp property of the output message.<span
+style='mso-spacerun:yes'>  </span>This is the first of the user property
+fields.<span style='mso-spacerun:yes'>  </span>The JMSTimestamp is the time
+when the output message arrived at the JMS server.<span
+style='mso-spacerun:yes'>  </span>You can determine the system latency by
+subtracting the JMSXSndTimestamp from the JMSTimestamp.<span
+style='mso-spacerun:yes'>  </span>The JMSXGroupSeq is in the second user
+property field, and JMSXMsgRate is in the third user property field.</p>
+
+<p class=Heading2Numbered style='tab-stops:.5in'><a name="_Toc135198523"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Importing CSV File into an Excel Workbook</a></p>
+
+<p class=Heading3Numbered style='margin-left:63.0pt'><a name="_Toc135198524"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>3.2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Importing
+the Data</a></p>
+
+<p class=MsoBodyText>Open a new Microsoft Excel Workbook.<span
+style='mso-spacerun:yes'>  </span>Next, select open file on the Excel menu
+bar.<span style='mso-spacerun:yes'>  </span>In the Open dialogue box select the
+Text Files type and then select the JmsStream CSV files.<span
+style='mso-spacerun:yes'>  </span>See <i style='mso-bidi-font-style:normal'>Figure
+1</i></p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><span style='mso-no-proof:
+yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1035" type="#_x0000_t75"
+ style='width:306pt;height:228.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=408 height=305
+src="PerformanceTestingJmsStream_files/image002.jpg" v:shapes="Picture_x0020_1"><![endif]></span></p>
+
+<p class=MsoCaption align=left style='text-align:left'>Figure <!--[if supportFields]><span
+style='mso-element:field-begin'></span><span
+style='mso-spacerun:yes'> </span>SEQ Figure \* ARABIC <span style='mso-element:
+field-separator'></span><![endif]--><span style='mso-no-proof:yes'>1</span><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]--></p>
+
+<p class=MsoBodyText>Copy the data from the CSV file generated by the first
+test into the new Excel Workbook.<span style='mso-spacerun:yes'> 
+</span>Highlight the spreadsheet fields and select AutoFit Selection.<span
+style='mso-spacerun:yes'>  </span>See <i style='mso-bidi-font-style:normal'>Figure
+2</i>.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><span style='mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_2" o:spid="_x0000_i1034"
+ type="#_x0000_t75" style='width:261.75pt;height:114.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=349 height=153
+src="PerformanceTestingJmsStream_files/image004.jpg" v:shapes="Picture_x0020_2"><![endif]></span></p>
+
+<p class=MsoCaption align=left style='text-align:left'>Figure <!--[if supportFields]><span
+style='mso-element:field-begin'></span><span
+style='mso-spacerun:yes'> </span>SEQ Figure \* ARABIC <span style='mso-element:
+field-separator'></span><![endif]--><span style='mso-no-proof:yes'>2</span><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]--></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>Next,
+label the JMSXGroupSeq and JMSXMsgRate fields.<span style='mso-spacerun:yes'> 
+</span>The fields are labeled “Sequence” and “Msg/Sec” in column K and L in <i
+style='mso-bidi-font-style:normal'>Figure 3</i>.<span
+style='mso-spacerun:yes'>  </span>Column J is the JMSXSndTimestamp property,
+but does not have to be labeled.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_3" o:spid="_x0000_i1033" type="#_x0000_t75" style='width:577.5pt;
+ height:237.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=770 height=317
+src="PerformanceTestingJmsStream_files/image006.jpg" v:shapes="Picture_x0020_3"><![endif]></span></p>
+
+<p class=MsoCaption align=left style='text-align:left'><br>
+Figure 3</p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>To
+create the graph base on the sequence of publication, sort the messages on the
+Sequence column.<span style='mso-spacerun:yes'>  </span>See <i
+style='mso-bidi-font-style:normal'>Figure 4</i> for an example.<span
+style='mso-spacerun:yes'>  </span>Sorting by sequence number is not necessary and
+in only useful to identify abnormally long delay for a particular message.<span
+style='mso-spacerun:yes'>  </span>To sort click the column containing the
+message sequence and then click the “Sort Ascending” button.<span
+style='mso-spacerun:yes'>  </span>When the message box appears, click
+“Sort”.<span style='mso-spacerun:yes'>  </span>The rows are now sorted<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_4" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:575.25pt;
+ height:200.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=767 height=267
+src="PerformanceTestingJmsStream_files/image008.jpg" v:shapes="Picture_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal><br>
+<i style='mso-bidi-font-style:normal'><span style='font-size:9.0pt;font-family:
+"Arial","sans-serif"'>Figure 4<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=Heading3Numbered style='margin-left:63.0pt'><a name="_Toc135198525"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>3.2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Calculating
+Latency</a></p>
+
+<p class=MsoBodyText>In a blank cell (Column M) on the heading line after the
+user properties type a label named “Latency”.<span style='mso-spacerun:yes'> 
+</span>See <i style='mso-bidi-font-style:normal'>Figure 5</i>.<span
+style='font-size:10.0pt;line-height:125%'><o:p></o:p></span></p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><span style='mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_5" o:spid="_x0000_i1031"
+ type="#_x0000_t75" style='width:575.25pt;height:221.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=767 height=295
+src="PerformanceTestingJmsStream_files/image010.jpg" v:shapes="Picture_x0020_5"><![endif]></span></p>
+
+<p class=MsoCaption align=left style='text-align:left'>Figure 5</p>
+
+<p class=MsoBodyText>Next, calculate the process latency by subtracting column <span
+style='font-family:"Courier New"'>J</span> (JMSXSndTimestamp property) from
+column <span style='font-family:"Courier New"'>I</span> (JMSTimestamp
+propery).<span style='mso-spacerun:yes'>  </span>In the “Latency column (Column
+M) on row 2 type the formula <span style='mso-bidi-font-size:9.0pt;line-height:
+125%;font-family:"Courier New";mso-bidi-font-family:Arial'>=TIMEVALUE(MID(I2,12,12))-TIMEVALUE(MID(J2,12,12))</span>.<span
+style='mso-spacerun:yes'>  </span>Copy this formula to all the other rows.<span
+style='mso-spacerun:yes'>  </span>This formula will calculate the latency of
+the process in Microsoft time format.<span style='mso-spacerun:yes'> 
+</span>This is NOT seconds.<span style='mso-spacerun:yes'>  </span>For the
+purposes of a performance test, the time units are irrelevant and converting
+the value to milliseconds is unnecessary.</p>
+
+<p class=Heading2Numbered><a name="_Toc135198526"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>3.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Creating a Chart</a></p>
+
+<p class=Heading3Numbered><![if !supportLists]><span style='mso-fareast-font-family:
+Arial'><span style='mso-list:Ignore'>3.3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Graphing Raw Values</p>
+
+<p class=MsoBodyText>Highlight all of the data in Column L and Column M and
+select the Excel Chart Wizard button on the task bar (Shown in <i
+style='mso-bidi-font-style:normal'>Figure 5</i>).<span
+style='mso-spacerun:yes'>  </span>Next, click Custom Type tab and select Lines
+on 2 Axis.<span style='mso-spacerun:yes'>  </span>See <i style='mso-bidi-font-style:
+normal'>Figure 6</i>.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><span style='mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_6" o:spid="_x0000_i1030"
+ type="#_x0000_t75" style='width:254.25pt;height:254.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image011.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=339 height=339
+src="PerformanceTestingJmsStream_files/image012.jpg" v:shapes="Picture_x0020_6"><![endif]></span></p>
+
+<p class=MsoCaption align=left style='text-align:left'>Figure 6</p>
+
+<p class=MsoBodyText>Keep clicking Next, and at the last step select Place
+chart as new sheet, and except the defaults.<span style='mso-spacerun:yes'> 
+</span>Click Finish.<span style='mso-spacerun:yes'>  </span>It is best to
+create the chart as a new sheet.<span style='mso-spacerun:yes'>  </span>Column
+I2 is the JMSTimestamp property and Column J2 is the JMSXSndTimestamp property
+(the send timestamp of the input message).</p>
+
+<p class=MsoBodyText>In the JMS Performance <span style='font-family:"Courier New"'>perftes_db_out.csv</span>
+example a message rate from 1 msg/sec to 20 msg/sec was sent to a two thread BW
+engine with a stored procedure call.<span style='mso-spacerun:yes'> 
+</span>From the chart in <i style='mso-bidi-font-style:normal'>Figure 7</i>, we
+can determine that the BW engine cannot handle the 13 msg/sec rate because the
+line starts to have a positive slope.<span style='mso-spacerun:yes'> 
+</span>The spikes in the message latency are cause when certain messages take
+longer to process than others.<span style='mso-spacerun:yes'>  </span>The
+spikes should be disregarded, and the observed slope should the slope of a
+moving average trend-line for the latency.<span style='mso-spacerun:yes'> 
+</span></p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><span style='mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_7" o:spid="_x0000_i1029"
+ type="#_x0000_t75" style='width:8in;height:351pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image013.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=768 height=468
+src="PerformanceTestingJmsStream_files/image014.gif" v:shapes="Picture_x0020_7"><![endif]></span></p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><i style='mso-bidi-font-style:
+normal'>Figure 7<o:p></o:p></i></p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>In <i style='mso-bidi-font-style:
+normal'>Figure 8</i> a 100 point moving average trend-line was added by right
+clicking on the Latency series and selecting Add Trendline.<span
+style='mso-spacerun:yes'>  </span>It is shown in yellow.<span
+style='mso-spacerun:yes'>  </span>Also, the chart type was changed to an XY
+(Scatter) by right clicking on the data series and selecting Chart Type.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><span style='mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_8" o:spid="_x0000_i1028"
+ type="#_x0000_t75" style='width:570pt;height:348pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image015.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=760 height=464
+src="PerformanceTestingJmsStream_files/image016.gif" v:shapes="Picture_x0020_8"><![endif]></span></p>
+
+<p class=MsoBodyText style='page-break-after:avoid'><i style='mso-bidi-font-style:
+normal'>Figure 8<o:p></o:p></i></p>
+
+<p class=Heading3Numbered><![if !supportLists]><span style='mso-fareast-font-family:
+Arial'><span style='mso-list:Ignore'>3.3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Graphing Average Values</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>An average value graph is
+easier to read and not as cluttered.<span style='mso-spacerun:yes'>  </span>To
+create an average value graph, first type “Message/Sec” and “Average Latency”
+headers in the spreadsheet.<span style='mso-spacerun:yes'>  </span>Next, under
+“Messages/Sec” type each rate interval, and under “Average Latency” type the
+formula <span style='mso-bidi-font-size:9.0pt;line-height:125%;font-family:
+"Courier New";mso-bidi-font-family:Arial'>=AVERAGE(M2:M101)</span>.<span
+style='mso-spacerun:yes'>  </span>Calculate the average for each rate
+interval.<span style='mso-spacerun:yes'>  </span>For instance the first rate
+interval is 1 Msg/Sec and the average is <span style='mso-bidi-font-size:9.0pt;
+line-height:125%;font-family:"Courier New";mso-bidi-font-family:Arial'>=AVERAGE(M2:M101)</span>,
+and the next rate interval is 2 Msg/Sec and the average is <span
+style='mso-bidi-font-size:9.0pt;line-height:125%;font-family:"Courier New";
+mso-bidi-font-family:Arial'>=AVERAGE(M102:M201)</span>. See example in <i
+style='mso-bidi-font-style:normal'>Figure 9</i>. </p>
+
+<p class=MsoBodyText><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_9" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:575.25pt;
+ height:257.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image017.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=767 height=343
+src="PerformanceTestingJmsStream_files/image018.jpg" v:shapes="Picture_x0020_9"><![endif]></span></p>
+
+<p class=MsoBodyText><i style='mso-bidi-font-style:normal'>Figure 9</i></p>
+
+<p class=MsoBodyText>To graph the average values select the “Message/Sec” and
+“Average Latency” columns (see <i style='mso-bidi-font-style:normal'>Figure 9</i>).<span
+style='mso-spacerun:yes'>  </span>Select the Standard XY (Scatter) chart type,
+click Next until the wizard ask where to create the new graph.<span
+style='mso-spacerun:yes'>  </span>It is best to create the chart as a new
+sheet. Click Finished.<span style='mso-spacerun:yes'>  </span><i
+style='mso-bidi-font-style:normal'>Figure 10</i> shows the Chart Wizard.</p>
+
+<p class=MsoBodyText><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_10" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:245.25pt;
+ height:245.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image019.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=327 height=327
+src="PerformanceTestingJmsStream_files/image020.jpg" v:shapes="Picture_x0020_10"><![endif]></span></p>
+
+<p class=MsoBodyText><i style='mso-bidi-font-style:normal'>Figure 10<o:p></o:p></i></p>
+
+<p class=MsoBodyText><i style='mso-bidi-font-style:normal'>Figure 11</i> shows
+the graph with the legend removed and the X and Y axis formatted and labeled.</p>
+
+<p class=MsoBodyText><span style='mso-spacerun:yes'> </span><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_11"
+ o:spid="_x0000_i1025" type="#_x0000_t75" style='width:575.25pt;height:351pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="PerformanceTestingJmsStream_files/image021.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=767 height=468
+src="PerformanceTestingJmsStream_files/image022.gif" v:shapes="Picture_x0020_11"><![endif]></span></p>
+
+<p class=MsoBodyText><i style='mso-bidi-font-style:normal'>Figure 11</i></p>
+
+</div>
+
+</body>
+
+</html>
