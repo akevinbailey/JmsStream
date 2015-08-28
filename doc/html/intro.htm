@@ -8,8 +8,7 @@
   <h2><a name="intro"/> Introduction</h2>
     <p>JmsStream has both a command-line executable and a Graphical User Interface (GUI) wrapper that records and replays JMS messages from queues or topics. It can capture and send text messages, map message, and binary messages. It can capture, but not sent object messages. The GUI application also provides the ability to safely edit or create a JmsStream message capture file.</p>
     <p>JmsStream is similar in functionality to tools like RvStream, RvFlow, and RvScript, except it is created specifically for JMS. JmsStream also has functions for performance testing, and is compatible with most JMS servers. It is not intended as a replacement for JMS message visualization tools like TIBMon or <a href="http://www.hermesjms.com" target="_blank">Hermes</a>. </p>
-  <p>
-      JmsStream provides the following kind of functionality:
+    <p>JmsStream provides the following kind of functionality:</p>	  
   <ul>
         <li>Capturing JMS messages on selected queues/topics, using TCP or SSL connections.</li>
         <li>Capture and save very large messages to ZIP compressed files. </li>
@@ -43,7 +42,11 @@
 <p>For example, if your JmsStream root is <code>C:\tibco\jmsstream</code>. Then you will put all of these files in <code>C:\tibco\jmsstream\lib\jbossts</code> directory. The other files in the <code>jbossts-jta-4.11.0.Final.zip</code> are not needed by JmsStream. </p>
     <p>See <a href="running.htm" target="_self">Running JmsStream</a> for more details.</p>
     <hr>
-<address><a href="mailto:abailey@tibco.com">abailey@tibco.com</a></address>
+
+<h2><a name="sourceCode"/>Source Code</h2>
+	<p>JmsStream was developed over ten year period with several people contributing bits and pieces.  It was originally ported from C code, and evolved from a quick and dirty command line application for replaying message into a more sophisticated JMS testing tool.  No attempt was made to redesign or modularize the code.  However, through the years JmsStream's code has been optimized for performance and user functionality. </p>
+
+	<address><a href="mailto:abailey@tibco.com">abailey@tibco.com</a></address>
 <!-- Created: 4 May 2006 -->
 <!-- hhmts start -->
 Last modified:
