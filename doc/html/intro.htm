@@ -6,9 +6,8 @@
 
   <body>
   <h2><a name="intro"/> Introduction</h2>
-    <p>JmsStream is a command-line utility that records and replays JMS messages from queues or topics. It can capture and send text messages, map message, and binary messages. It can capture, but not sent object messages. There is also a GUI version (JmsStreamGUI.jar) that raps all the functionality of the command-line application and provides the ability to safely edit or create a JmsStream message capture file.</p>
-    <p>JmsStream is similar in functionality to tools
-    like RvStream, RvFlow, and RvScript, except it is created specifically for JMS. JmsStream also has functions for performance testing, and is compatible with most JMS servers. It is not intended as a replacement for JMS message visualization tools like TIBMon or <a href="http://www.hermesjms.com" target="_blank">Hermes</a>. </p>
+    <p>JmsStream has both a command-line executable and a Graphical User Interface (GUI) wrapper that records and replays JMS messages from queues or topics. It can capture and send text messages, map message, and binary messages. It can capture, but not sent object messages. The GUI application also provides the ability to safely edit or create a JmsStream message capture file.</p>
+    <p>JmsStream is similar in functionality to tools like RvStream, RvFlow, and RvScript, except it is created specifically for JMS. JmsStream also has functions for performance testing, and is compatible with most JMS servers. It is not intended as a replacement for JMS message visualization tools like TIBMon or <a href="http://www.hermesjms.com" target="_blank">Hermes</a>. </p>
   <p>
       JmsStream provides the following kind of functionality:
   <ul>
@@ -26,7 +25,7 @@
 <h2>&nbsp;</h2>
 <h2><a name="requirements"/>Requirements</h2>
     <p>JmsStream 2.7 is written in Java and compiled using JDK 1.8, but is backwards compatible with JRE version 1.5. Thus a Java run-time environment is needed and this should be at least version 1.5.0 or greater. All of the examples assume that the Java JRE bin directory is in the system path. However, the Windows EXE version of JmsStream and JmsStreamGUI do not require a JRE installation on the machine.</p>
-    <p>JmsStream 2.7 supports TIBCO EMS 4.x - 8.x, Apache ActiveMQ 5, and JBoss HornetQ 2, but it should work with any JMS compliant server. JmsStream install file includes the TIBCO EMS 7.0, Apache ActiveMQ 5.5.0, and JBoss HornetQ 2.2.5 client libraries. Therefore no EMS, ActiveMQ, or HornetQ client installation is needed. In order to use other JMS servers you must install and include their client JARs in the CLASSPATH.</p>
+    <p>JmsStream 2.7 supports TIBCO EMS 4.x - 8.x, Apache ActiveMQ 5, and JBoss HornetQ 2, but it should work with any JMS compliant server. JmsStream install file includes the TIBCO EMS 8.2, Apache ActiveMQ 5.5.0, and JBoss HornetQ 2.2.5 client libraries. Therefore no EMS, ActiveMQ, or HornetQ client installation is needed. In order to use other JMS servers you must install and include their client JARs in the CLASSPATH.</p>
     <p>To use the XA features of JmsStream you must download JBoss Transaction Manager 4.11.0 from:<br>
     <a href="http://www.jboss.org/jbosstm/downloads/4.11.0.Final/binary/jbossts-jta-4.11.0.Final.zip" target="_blank">http://www.jboss.org/jbosstm/downloads/4.11.0.Final/binary/jbossts-jta-4.11.0.Final.zip</a></p>
 <h2>&nbsp;</h2>
@@ -48,7 +47,7 @@
 <!-- Created: 4 May 2006 -->
 <!-- hhmts start -->
 Last modified:
-02 February 2015
+28 July 2015
 <!-- hhmts end -->
   </body>
 </html>
