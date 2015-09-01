@@ -19,7 +19,7 @@
         <li>Create JMS or XA transactional sessions for testing or message capturing/publication from a file.</li>
         <li>Compatible with JBoss Transaction Manager for testing XA behavior and connections.</li>
         <li>Security Testing of JNDI and destinations.</li>
-        <li>Testing JMS Server setup. </li>
+        <li>Testing JMS Server setup.</li>
   </ul>
 <h2>&nbsp;</h2>
 <h2><a name="requirements"/>Requirements</h2>
