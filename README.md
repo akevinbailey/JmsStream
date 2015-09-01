@@ -26,8 +26,8 @@
 		<br/>
 		<h2><a name="install"/>Installation</h2>
 		<p>JmsStream uses 7Zip to compress the installation files. 7Zip files are about half the size of standard ZIP files. 7Zip is open-source and can be downloaded from <a href="http://www.7zip.org" title="7Zip Download">http://www.7zip.org</a>.</p>
-		<p>Installation of JmsStream is basically a matter of unzipping <code>JmsStream_x.x.7z</code> file to a local directory. This 7Zip file includes all classes required to run JmsStream, except for the JBoss Transaction Manager 4.11.0 libraries and the Java JRE. To run JmsStream, <code>cd</code> to the directory containing <code>JmsStream.jar</code> and type <code>java -jar JmsStream.jar -?</code>.</p>
-		<p>The GUI shell for JmsStream (JmsStreamGUI) requires the <code>JmsStream.jar</code> to be in the same directory as <code>JmsStreamGUI.jar</code> and can be started by typing <code>java -jar JmsStreamGUI.jar</code> with no command line options. </p>
+		<p>Installation of JmsStream is basically a matter of unzipping <code>JmsStream.7z</code> file to a local directory. This 7Zip file includes all classes required to run JmsStream, except for the JBoss Transaction Manager 4.11.0 libraries and the Java JRE. To run JmsStream, <code>cd</code> to the directory containing <code>JmsStream.jar</code> and type <code>java -jar JmsStream.jar -?</code>.</p>
+		<p>The GUI shell for JmsStream (JmsStreamGUI) requires the <code>JmsStream.jar</code> to be in the same directory as <code>JmsStreamGUI.jar</code> and can be started by typing <code>java -jar JmsStreamGUI.jar</code> with no command line options.</p>
 		<p>
 			<code>JmsStreamEXE.7z</code> contains the Windows EXE versions of JmsStream, <code>JmsStream.exe </code>and<code> JmsStreamGUI.exe</code>. <code>JmsStreamEXE.7z</code> also contains the JRE necessary to run the EXEs, and it does not require a Java installation. Just unzip <code>JmsStreamEXE.7z</code> file to a local directory and run the application.</p>
 		<p>To enable the XA capabilities of JmsStream download <code>jbossts-jta-4.11.0.Final.zip</code> from the JBoss web site, and copy the following JAR files from the ZIP file to the <code>./lib/jbossts</code> directory of the JmsStream root:</p>
@@ -36,13 +36,10 @@
 			<li>JBOSSTS_4_11_0_Final\lib\ext\commons-logging.jar</li>
 			<li>JBOSSTS_4_11_0_Final\lib\ext\log4j.jar</li>
 		</ul>
-		<p>For example, if your JmsStream root is <code>C:\tibco\jmsstream</code>. Then you will put all of these files in <code>C:\tibco\jmsstream\lib\jbossts</code> directory. The other files in the <code>jbossts-jta-4.11.0.Final.zip</code> are not needed by JmsStream. </p>
+		<p>For example, if your JmsStream root is <code>C:\tibco\jmsstream</code>. Then you will put all of these files in <code>C:\tibco\jmsstream\lib\jbossts</code> directory. The other files in the <code>jbossts-jta-4.11.0.Final.zip</code> are not needed by JmsStream.</p>
 		<p>See <a href="running.htm" target="_self">Running JmsStream</a> for more details.</p>
+		<br/>
 		<h2><a name="sourceCode"/>Source Code</h2>
-		<p>JmsStream was developed over ten year period with several people contributing bits and pieces.  It was originally ported from C code, and evolved from a quick and dirty command line application for replaying message into a more sophisticated JMS testing tool.  No attempt was made to redesign or modularize the code.  However, through the years JmsStream's code has been optimized for performance and user functionality. </p>
-		<hr/>
-		<address>
-			<a href="mailto:abailey@tibco.com">abailey@tibco.com</a>
-		</address>
+		<p>JmsStream was developed over ten year period with several people contributing bits and pieces.  It was originally ported from C code, and evolved from a quick and dirty command line application for replaying message into a more sophisticated JMS testing tool.  No attempt was made to redesign or modularize the code.  However, through the years JmsStream's code has been optimized for performance and user functionality.</p>
 	</body>
 </html>
