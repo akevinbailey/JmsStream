@@ -1,0 +1,11 @@
+#---------- #1 :  ----------#
+<MSG_INFO>
+    <message type="BytesMessage" messageSelector="" originationTimestamp="" jmsServerTimestamp="" jmsMsgExpiration="">
+        <header JMSDestination="queue.sample" JMSDestinationType="Queue" JMSDeliveryMode="1" />
+        <properties>
+        </properties>
+    </message>
+</MSG_INFO>
+BodyLength=28
+SGVsbG8gdGhpcyBpcyBkYXRhLg==
+
