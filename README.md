@@ -14,7 +14,7 @@
         <li>Capture and save very large messages to ZIP compressed files. </li>
         <li>Re-sending of captured messages, optionally with different destinations, reply destinations, and modified message data. </li>
         <li>Re-sending messages in request/reply mode to a service and capturing the reply either synchronously or asynchronously. </li>
-        <li>Re-sending messages for debugging purposes. </li>
+        <li>Re-sending messages for debugging purposes.</li>
         <li>Performance testing of JMS Servers, request/reply services, or message consumers using TCP or SSL messages.</li>
         <li>Create JMS or XA transactional sessions for testing or message capturing/publication from a file.</li>
         <li>Compatible with JBoss Transaction Manager for testing XA behavior and connections.</li>

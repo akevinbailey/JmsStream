@@ -1,7 +1,0 @@
-To enable the XA capabilities of JmsStream download jbossts-jta-4.11.0.Final.zip from the JBoss web site:
-http://www.jboss.org/jbosstm/downloads/4.11.0.Final/binary/jbossts-jta-4.11.0.Final.zip
-Then copy the following JAR files from the ZIP file to the same directory as this text file:
-
-JBOSSTS_4_11_0_Final\lib\jbossjta.jar
-JBOSSTS_4_11_0_Final\lib\ext\commons-logging.jar
-JBOSSTS_4_11_0_Final\lib\ext\log4j.jar
