@@ -4,8 +4,7 @@
 		<title>JmsStream Introduction</title>
 	</head>
 	<body>
-		<h2>
-			<a name="intro"/> Introduction</h2>
+		<h2><a name="intro"/> Introduction</h2>
 		<p>JmsStream has both a command-line executable and a Graphical User Interface (GUI) wrapper that records and replays JMS messages from queues or topics. It can capture and send text messages, map message, and binary messages. It can capture, but not sent object messages. The GUI application also provides the ability to safely edit or create a JmsStream message capture file.</p>
 		<p>JmsStream is similar in functionality to tools like RvStream, RvFlow, and RvScript, except it is created specifically for JMS. JmsStream also has functions for performance testing, and is compatible with most JMS servers. It is not intended as a replacement for JMS message visualization tools like TIBMon or <a href="http://www.hermesjms.com" target="_blank">Hermes</a>. </p>
 		<p>JmsStream provides the following kind of functionality:</p>	  
@@ -22,16 +21,14 @@
 			<li>Testing JMS Server setup. </li>
 		</ul>
 		<br/>
-		<h2>
-			<a name="requirements"/>Requirements</h2>
+		<h2><a name="requirements"/>Requirements</h2>
 		<p>JmsStream 2.7 is written in Java and compiled using JDK 1.8, but is backwards compatible with JRE version 1.5. Thus a Java run-time environment is needed and this should be at least version 1.5.0 or greater. All of the examples assume that the Java JRE bin directory is in the system path. However, the Windows EXE version of JmsStream and JmsStreamGUI do not require a JRE installation on the machine.</p>
 		<p>JmsStream 2.7 supports TIBCO EMS 4.x - 8.x, Apache ActiveMQ 5, and JBoss HornetQ 2, but it should work with any JMS compliant server. JmsStream install file includes the TIBCO EMS 8.2, Apache ActiveMQ 5.5.0, and JBoss HornetQ 2.2.5 client libraries. Therefore no EMS, ActiveMQ, or HornetQ client installation is needed. In order to use other JMS servers you must install and include their client JARs in the CLASSPATH.</p>
 		<p>To use the XA features of JmsStream you must download JBoss Transaction Manager 4.11.0 from:<br/>
 			<a href="http://www.jboss.org/jbosstm/downloads/4.11.0.Final/binary/jbossts-jta-4.11.0.Final.zip" target="_blank">http://www.jboss.org/jbosstm/downloads/4.11.0.Final/binary/jbossts-jta-4.11.0.Final.zip</a>
 		</p>
 		<br/>
-		<h2>
-			<a name="install"/>Installation</h2>
+		<h2><a name="install"/>Installation</h2>
 		<p>JmsStream uses 7Zip to compress the installation files. 7Zip files are about half the size of standard ZIP files. 7Zip is open-source and can be downloaded from <a href="http://www.7zip.org" title="7Zip Download">http://www.7zip.org</a>.</p>
 		<p>Installation of JmsStream is basically a matter of unzipping <code>JmsStream.7z</code> file to a local directory. This 7Zip file includes all classes required to run JmsStream, except for the JBoss Transaction Manager 4.11.0 libraries and the Java JRE. To run JmsStream, <code>cd</code> to the directory containing <code>JmsStream.jar</code> and type <code>java -jar JmsStream.jar -?</code>.</p>
 		<p>The GUI shell for JmsStream (JmsStreamGUI) requires the <code>JmsStream.jar</code> to be in the same directory as <code>JmsStreamGUI.jar</code> and can be started by typing <code>java -jar JmsStreamGUI.jar</code> with no command line options. </p>
